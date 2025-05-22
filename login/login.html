@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CloudyMsg</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+  <nav class="container navbar bg-body-primary">
+    <div class="container-fluid logo_bar">
+    <div id="logo_level">
+        <img src="Logo.png" alt="Logo">
+      <a class="navbar-brand" href="#">CloudyMsg Software Solutions Pvt Ltd</a>
+    </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="../index.html">Home</a>
+              </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Payments</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">FAQ's</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+          <!-- <li class="nav-item login">
+            <a class="nav-link" href="./login/signup.html">Register</a>
+            <a class="nav-link" href="./login/login.html">Login</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!-- <a href="../index.html"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-house-fill m-2" viewBox="0 0 16 16">
+  <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+  <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+</svg></a> -->
+      <div class="container" id="container_body">
+    <div class="form-container">
+      <h2>Login</h2>
+      <form action="login.php" method="POST">
+        <label for="usernameoremail">Username or Email:</label>
+        <input type="text" name="usernameoremail" required><br>
+
+        <label for="password">Password:</label>
+        <div class="password-container">
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <button type="submit" name="login">Login</button>
+        <div class="social-login">
+          <p>Or login with:</p>
+          <a href="/auth/google" class="google-btn">Google</a>
+          <a href="/auth/microsoft" class="microsoft-btn">Microsoft</a>
+        </div>
+      </form>
+
+
+    </div>
+  </div>
+ <!-- foot -->
+ <footer>
+  <div class="shadow p-4 mb-5 bg-body-tertiary rounded container-fluid">
+      <div class="row d-flex">
+        <div class="col">
+          <ul style="text-align: center; text-decoration: none; list-style:none">
+              <li><h4>Discover</h4></li>
+              <li><a href="">About</a></li>
+              <li><a href="">Pricing</a></li>
+              <li><a href="">Reseller Program</a></li>
+              <li><a href="">FAQ</a></li>
+              <li><a href="">Payment</a></li>
+              <li><a href="">Blog</a></li>
+              <li><a href="">Contact</a></li>
+          </ul>
+      </div>
+      <div class="col">
+              <ul style="text-align: center; text-decoration: none; list-style:none">
+                  <li><h4>Channels</h4></li>
+                  <li><a href="././service_pages/promotional.html">Promotional SMS</a></li>
+                  <li><a href="././service_pages/transactional.html">Transactional SMS</a></li>
+                  <li><a href="././service_pages/otp_page.html">OTP SMS</a></li>
+                  <li><a href="././service_pages/voice.html">Voice SMS</a></li>
+                  <li><a href="././service_pages/api_index.html">Whatsapp API</a></li>
+                  <li><a href="././service_pages/missedcall_index.html">Missed Call Service</a></li>
+                  <li><a href="././service_pages/email_index.html">Email Marketing</a></li>
+              </ul>
+              <div class="col"></div>
+          </div>
+          <!-- <div class="col">col</div> -->
+          <div class="col">
+          <ul style="text-align: center; text-decoration: none; list-style:none">
+              <li><h4>Service</h4></li>
+              <li><a href="">Banking & Financial Services</a></li>
+              <li><a href="">Govt. & Public Utilities</a></li>
+              <li><a href="">Media & Entertainment</a></li>
+              <li><a href="">Restaurant & Takeaways</a></li>
+              <li><a href="">Event Management</a></li>
+              <li><a href="">Personal Care & Beauty</a></li>
+              <li><a href="">Healthcare</a></li>
+              <li><a href="">Automobiles</a></li>
+              <li><a href="">Real Estate</a></li>
+              <li><a href="">Retail</a></li>
+              <li><a href="">Travel & Tourism</a></li>
+              <li><a href="">NGOs</a></li>
+              <li><a href="">Logistics</a></li>
+              <li><a href="">Technology</a></li>
+              <li><a href="">E-Commerce</a></li>
+              <li><a href="">Advertising Agencies</a></li>
+              <li><a href="">Education</a></li>
+              <li><a href="">Recruitment</a></li>
+          </ul>
+          </div>
+          <div class="col">
+              <div class="container text-center">
+                  <div class="row row-cols-1">
+                    <div class="col">
+                       <ul style="text-align: center; text-decoration: none; list-style:none">
+                                <li><h4 id="Contact_scroll">Get in Touch</h4></li>
+                                <li><p>Old No, 669, New No, 306, Annasalai, Thousand Lights, Teynampet West, Chennai - 600006</p></li>
+                                <li><p>Call: +91 93807 11234</p></li>
+                                <li><p>Mail: info@cloudymsg.com</p></li>
+                            </ul>
+                    </div>
+                    <h4>Follow Us on</h4>
+                    <div class="col" id="logo_format">
+                                <a href=""><img src="././images/Whatsapp Icon Logo.png"></a>
+                                <a href=""><img src="././images/facebook_logo.png"></a>
+                                <a href=""><img src="././images/Instagram-Logo.png"></a>
+                                <!-- <a href=""><img src="././images/twitter_logo.png"></a> -->
+                                <a href=""><img src="././images/X-Logo.png"></a>
+                                <!-- <a href=""><img src="././images/discord_logo.png"></a> -->
+                      </div>
+                    <!-- <div class="col">Column</div>
+                    <div class="col">Column</div> -->
+                  </div>
+                </div>
+          </div>
+        </div>
+  </div>
+</footer>
+
+<!-- presentedby -->
+<div style="text-align: center; display: flex; align-items: center; justify-content: space-between; margin: 0px 5px;">
+  <p>Powered by Gurushasta Innotech</p>
+  <p>Copyright@2025</p>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
