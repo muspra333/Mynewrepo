@@ -1,0 +1,2191 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CloudyMsg - Premium Communication Solutions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <style>
+    /* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Custom Properties */
+:root {
+    --primary-color: #6366f1;
+    --primary-dark: #4f46e5;
+    --secondary-color: #f59e0b;
+    --success-color: #10b981;
+    --danger-color: #ef4444;
+    --dark-color: #1f2937;
+    --light-color: #f8fafc;
+    --border-color: #e5e7eb;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Styles */
+.bg-gradient-primary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+}
+
+.navbar-brand-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.navbar-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white !important;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.navbar-nav .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 2px;
+    background: var(--secondary-color);
+    border-radius: 2px;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,1000 1000,0 1000,1000"/></svg>');
+    background-size: cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.hero-image {
+    position: relative;
+    height: 500px;
+}
+
+.floating-card {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-card:nth-child(1) {
+    top: 10%;
+    right: 10%;
+    animation-delay: 0s;
+}
+
+.floating-card:nth-child(2) {
+    top: 50%;
+    left: 10%;
+    animation-delay: 2s;
+}
+
+.floating-card:nth-child(3) {
+    bottom: 10%;
+    right: 20%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Pricing Section */
+.pricing-section {
+    padding: 100px 0;
+    background: var(--light-color);
+}
+
+.section-header {
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: #6b7280;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.pricing-category {
+    margin-bottom: 5rem;
+}
+
+.category-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.category-header i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.category-header h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.table-container {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.pricing-table {
+    margin: 0;
+}
+
+.pricing-table thead {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+}
+
+.pricing-table th {
+    font-weight: 600;
+    padding: 1.5rem 1rem;
+    border: none;
+    text-align: center;
+}
+
+.pricing-table td {
+    padding: 1.5rem 1rem;
+    text-align: center;
+    vertical-align: middle;
+    border-color: var(--border-color);
+}
+
+.price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.featured-row {
+    background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+}
+
+.popular-row {
+    background: linear-gradient(135deg, #fffbeb, #fef3c7);
+    position: relative;
+}
+
+.popular-row::before {
+    content: 'MOST POPULAR';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--secondary-color);
+    color: white;
+    padding: 0.25rem 1rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+/* Pricing Cards */
+.pricing-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+    height: 100%;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.pricing-card.featured {
+    border: 2px solid var(--secondary-color);
+    transform: scale(1.05);
+}
+
+.pricing-card.featured:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--secondary-color);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.pricing-card .card-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    padding: 2rem 1.5rem 1.5rem;
+    text-align: center;
+}
+
+.pricing-card.featured .card-header {
+    background: linear-gradient(135deg, var(--secondary-color), #f59e0b);
+}
+
+.pricing-card .card-header h5 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.price-display {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.currency {
+    font-size: 1.5rem;
+    font-weight: 600;
+    vertical-align: top;
+}
+
+.amount {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.period {
+    font-size: 1rem;
+    color: #6b7280;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.feature-list li {
+    padding: 0.75rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.feature-list i {
+    color: var(--success-color);
+    font-size: 1.1rem;
+}
+
+/* WhatsApp Pricing */
+.whatsapp-pricing {
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    height: 100%;
+    border: 2px solid transparent;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.feature-card.premium {
+    border-color: var(--secondary-color);
+    background: linear-gradient(135deg, #fffbeb, #fef3c7);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: white;
+    font-size: 2rem;
+}
+
+.feature-card.premium .feature-icon {
+    background: linear-gradient(135deg, var(--secondary-color), #f59e0b);
+}
+
+.feature-card h5 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+}
+
+.pricing-info {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.pricing-info .price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.pricing-info .unit {
+    color: #6b7280;
+    font-size: 0.875rem;
+    display: block;
+    margin-top: 0.25rem;
+}
+
+/* Features Section */
+.features-section {
+    padding: 100px 0;
+    background: white;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.feature-item:hover {
+    background: var(--light-color);
+    transform: translateY(-5px);
+}
+
+.feature-item .feature-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: white;
+    font-size: 2rem;
+}
+
+.feature-item h5 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+}
+
+.feature-item p {
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--dark-color) 0%, #374151 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle fill="rgba(255,255,255,0.05)" cx="200" cy="200" r="100"/><circle fill="rgba(255,255,255,0.03)" cx="800" cy="300" r="150"/><circle fill="rgba(255,255,255,0.04)" cx="400" cy="700" r="120"/></svg>');
+}
+
+.cta-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.cta-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Footer */
+.footer-section {
+    background: var(--dark-color);
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer-widget {
+    margin-bottom: 2rem;
+}
+
+.widget-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+    color: #d1d5db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.contact-info {
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.contact-item i {
+    color: var(--primary-color);
+    margin-top: 0.25rem;
+    font-size: 1.1rem;
+}
+
+.contact-item p {
+    margin: 0;
+    color: #d1d5db;
+    line-height: 1.5;
+}
+
+.social-links h6 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    border-top: 1px solid #374151;
+    padding-top: 2rem;
+    margin-top: 3rem;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #9ca3af;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Buttons */
+.btn {
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    border: 2px solid transparent;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+    color: white;
+}
+
+.btn-outline-primary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, var(--secondary-color), #f59e0b);
+    color: white;
+    border: 2px solid transparent;
+}
+
+.btn-warning:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);
+    color: white;
+}
+
+.btn-light {
+    background: white;
+    color: var(--primary-color);
+    border: 2px solid transparent;
+}
+
+.btn-light:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+    color: var(--primary-color);
+}
+
+.btn-outline-light {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-outline-light:hover {
+    background: white;
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Badges */
+.badge {
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .cta-title {
+        font-size: 2rem;
+    }
+    
+    .floating-card {
+        padding: 1.5rem;
+    }
+    
+    .pricing-card .card-header {
+        padding: 1.5rem 1rem 1rem;
+    }
+    
+    .amount {
+        font-size: 2.5rem;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .cta-title {
+        font-size: 1.75rem;
+    }
+    
+    .floating-card {
+        padding: 1rem;
+        font-size: 0.875rem;
+    }
+    
+    .floating-card i {
+        font-size: 2rem !important;
+    }
+    
+    .btn-lg {
+        padding: 0.75rem 1.25rem;
+        font-size: 1rem;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loading Animation */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+    box-shadow: 0 2px 10px rgba(99, 102, 241, 0.3);
+}
+
+::-webkit-scrollbar-corner {
+    background: #f1f1f1;
+}
+
+/* Firefox Scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) #f1f1f1;
+}
+
+/* Utility Classes */
+.text-gradient {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.bg-glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.shadow-custom {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.border-gradient {
+    border: 2px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, var(--primary-color), var(--secondary-color)) border-box;
+}
+
+/* Hover Effects */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* Focus States */
+.btn:focus,
+.form-control:focus,
+.form-select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .back-to-top,
+    .floating-card {
+        display: none !important;
+    }
+    
+    .hero-section,
+    .cta-section {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .pricing-card,
+    .feature-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-color: #0000ff;
+        --primary-dark: #000080;
+        --secondary-color: #ff8c00;
+        --dark-color: #000000;
+        --border-color: #000000;
+    }
+    
+    .btn {
+        border-width: 2px;
+    }
+    
+    .pricing-card,
+    .feature-card {
+        border: 2px solid var(--dark-color);
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .floating-card {
+        animation: none;
+    }
+    
+    .fade-in {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .features-section {
+        background: #1f2937;
+        color: white;
+    }
+    
+    .feature-item:hover {
+        background: #374151;
+    }
+    
+    .pricing-section {
+        background: #111827;
+    }
+    
+    .pricing-card,
+    .feature-card,
+    .table-container {
+        background: #1f2937;
+        color: white;
+        border-color: #374151;
+    }
+    
+    .pricing-table td {
+        border-color: #374151;
+    }
+    
+    .section-title {
+        color: white;
+    }
+    
+    .section-subtitle {
+        color: #d1d5db;
+    }
+}
+
+/* Additional Responsive Breakpoints */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-section {
+        padding-top: 60px;
+    }
+    
+    .hero-image {
+        height: 400px;
+        margin-top: 3rem;
+    }
+    
+    .floating-card {
+        padding: 1.5rem;
+    }
+    
+    .pricing-section,
+    .features-section,
+    .cta-section {
+        padding: 80px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section,
+    .pricing-section,
+    .features-section,
+    .cta-section {
+        padding: 60px 0;
+    }
+    
+    .section-header {
+        margin-bottom: 3rem;
+    }
+    
+    .pricing-category {
+        margin-bottom: 3rem;
+    }
+    
+    .category-header {
+        padding: 1.5rem;
+    }
+    
+    .feature-item {
+        padding: 1.5rem;
+    }
+    
+    .footer-section {
+        padding: 40px 0 20px;
+    }
+    
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* Accessibility Improvements */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Skip to content link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+/* Form Styles */
+.form-control,
+.form-select {
+    border-radius: 10px;
+    border: 2px solid var(--border-color);
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* Table Responsive */
+.table-responsive {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Loading States */
+.btn.loading {
+    position: relative;
+    color: transparent;
+}
+
+.btn.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Error States */
+.error {
+    color: var(--danger-color);
+    border-color: var(--danger-color) !important;
+}
+
+.success {
+    color: var(--success-color);
+    border-color: var(--success-color) !important;
+}
+
+/* Tooltip Styles */
+.tooltip {
+    font-size: 0.875rem;
+}
+
+.tooltip-inner {
+    background: var(--dark-color);
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+}
+
+/* Modal Styles */
+.modal-content {
+    border-radius: 20px;
+    border: none;
+    box-shadow: var(--shadow-lg);
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--border-color);
+    border-radius: 20px 20px 0 0;
+}
+
+.modal-footer {
+    border-top: 1px solid var(--border-color);
+    border-radius: 0 0 20px 20px;
+}
+
+/* Alert Styles */
+.alert {
+    border-radius: 15px;
+    border: none;
+    padding: 1rem 1.5rem;
+}
+
+.alert-primary {
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--primary-dark);
+}
+
+.alert-warning {
+    background: rgba(245, 158, 11, 0.1);
+    color: #92400e;
+}
+
+.alert-success {
+    background: rgba(16, 185, 129, 0.1);
+    color: #065f46;
+}
+
+.alert-danger {
+    background: rgba(239, 68, 68, 0.1);
+    color: #991b1b;
+}
+
+/* Performance Optimizations */
+.will-change-transform {
+    will-change: transform;
+}
+
+.will-change-opacity {
+    will-change: opacity;
+}
+/* GPU Acceleration */
+.gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* 3D Transform Optimizations */
+.transform-3d {
+    transform-style: preserve-3d;
+}
+
+.hardware-accelerated {
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+}
+
+/* Animation Performance */
+.smooth-animation {
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Advanced Animations */
+@keyframes slideInUp {
+    from {
+        transform: translate3d(0, 100%, 0);
+        opacity: 0;
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translate3d(0, -100%, 0);
+        opacity: 0;
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translate3d(-100%, 0, 0);
+        opacity: 0;
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translate3d(100%, 0, 0);
+        opacity: 0;
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        transform: scale3d(0.8, 0.8, 1);
+        opacity: 0;
+    }
+    to {
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale3d(1, 1, 1);
+    }
+    50% {
+        transform: scale3d(1.05, 1.05, 1);
+    }
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 53%, 80%, 100% {
+        transform: translate3d(0, 0, 0);
+    }
+    40%, 43% {
+        transform: translate3d(0, -30px, 0);
+    }
+    70% {
+        transform: translate3d(0, -15px, 0);
+    }
+    90% {
+        transform: translate3d(0, -4px, 0);
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translate3d(0, 0, 0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translate3d(-10px, 0, 0);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translate3d(10px, 0, 0);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+    to {
+        transform: rotate3d(0, 0, 1, 360deg);
+    }
+}
+
+@keyframes flipInX {
+    from {
+        transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+        opacity: 0;
+    }
+    40% {
+        transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    }
+    60% {
+        transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+        opacity: 1;
+    }
+    80% {
+        transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    }
+    to {
+        transform: perspective(400px);
+        opacity: 1;
+    }
+}
+
+@keyframes flipInY {
+    from {
+        transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+        opacity: 0;
+    }
+    40% {
+        transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    }
+    60% {
+        transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+        opacity: 1;
+    }
+    80% {
+        transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+    }
+    to {
+        transform: perspective(400px);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale3d(0.3, 0.3, 1);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    to {
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomOut {
+    from {
+        opacity: 1;
+    }
+    50% {
+        transform: scale3d(0.3, 0.3, 1);
+        opacity: 0;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Animation Classes */
+.animate-slideInUp {
+    animation: slideInUp 0.6s ease-out;
+}
+
+.animate-slideInDown {
+    animation: slideInDown 0.6s ease-out;
+}
+
+.animate-slideInLeft {
+    animation: slideInLeft 0.6s ease-out;
+}
+
+.animate-slideInRight {
+    animation: slideInRight 0.6s ease-out;
+}
+
+.animate-fadeInScale {
+    animation: fadeInScale 0.6s ease-out;
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+.animate-bounce {
+    animation: bounce 1s infinite;
+}
+
+.animate-shake {
+    animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+.animate-rotate {
+    animation: rotate 2s linear infinite;
+}
+
+.animate-flipInX {
+    animation: flipInX 0.75s ease-in-out;
+}
+
+.animate-flipInY {
+    animation: flipInY 0.75s ease-in-out;
+}
+
+.animate-zoomIn {
+    animation: zoomIn 0.6s ease-out;
+}
+
+.animate-zoomOut {
+    animation: zoomOut 0.6s ease-out;
+}
+
+/* Delayed Animations */
+.animate-delay-100 {
+    animation-delay: 0.1s;
+}
+
+.animate-delay-200 {
+    animation-delay: 0.2s;
+}
+
+.animate-delay-300 {
+    animation-delay: 0.3s;
+}
+
+.animate-delay-500 {
+    animation-delay: 0.5s;
+}
+
+.animate-delay-700 {
+    animation-delay: 0.7s;
+}
+
+.animate-delay-1000 {
+    animation-delay: 1s;
+}
+
+/* Animation Durations */
+.animate-fast {
+    animation-duration: 0.3s;
+}
+
+.animate-slow {
+    animation-duration: 1.2s;
+}
+
+.animate-slower {
+    animation-duration: 2s;
+}
+
+/* Intersection Observer Classes */
+.observe-fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.observe-fade.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.observe-scale {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.6s ease;
+}
+
+.observe-scale.in-view {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.observe-slide-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.6s ease;
+}
+
+.observe-slide-left.in-view {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.observe-slide-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.6s ease;
+}
+
+.observe-slide-right.in-view {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Parallax Effects */
+.parallax {
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+}
+
+.parallax-slow {
+    transform: translate3d(0, calc(var(--scroll-y) * 0.5px), 0);
+}
+
+.parallax-fast {
+    transform: translate3d(0, calc(var(--scroll-y) * -0.8px), 0);
+}
+
+/* Morphing Shapes */
+.morph-circle {
+    border-radius: 50%;
+    transition: border-radius 0.5s ease;
+}
+
+.morph-circle:hover {
+    border-radius: 20px;
+}
+
+.morph-square {
+    border-radius: 20px;
+    transition: border-radius 0.5s ease;
+}
+
+.morph-square:hover {
+    border-radius: 50%;
+}
+
+/* Gradient Animations */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animate-gradient {
+    background: linear-gradient(-45deg, var(--primary-color), var(--secondary-color), var(--primary-dark), var(--success-color));
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+}
+
+/* Text Animations */
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: var(--primary-color);
+    }
+}
+
+.typewriter {
+    overflow: hidden;
+    border-right: 2px solid var(--primary-color);
+    white-space: nowrap;
+    animation: typewriter 3s steps(40, end), blink 0.75s step-end infinite;
+}
+
+/* Particle Effects */
+.particles {
+    position: relative;
+    overflow: hidden;
+}
+
+.particles::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
+    animation: float 20s ease-in-out infinite;
+    pointer-events: none;
+}
+
+/* Glassmorphism Effects */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.glass-dark {
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Neumorphism Effects */
+.neomorphism {
+    background: #e0e5ec;
+    border-radius: 20px;
+    box-shadow: 
+        20px 20px 60px #bebebe,
+        -20px -20px 60px #ffffff;
+}
+
+.neomorphism-inset {
+    background: #e0e5ec;
+    border-radius: 20px;
+    box-shadow: 
+        inset 20px 20px 60px #bebebe,
+        inset -20px -20px 60px #ffffff;
+}
+
+/* Clip Path Animations */
+@keyframes clipPath {
+    0% {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    }
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+.clip-reveal {
+    animation: clipPath 1s ease-in-out;
+}
+
+/* Performance Monitoring */
+.performance-monitor {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 12px;
+    z-index: 9999;
+    display: none;
+}
+
+/* Debug Mode */
+.debug * {
+    outline: 1px solid red;
+}
+
+.debug .container {
+    outline: 2px solid blue;
+}
+
+.debug .row {
+    outline: 1px solid green;
+}
+
+.debug [class*="col-"] {
+    outline: 1px solid orange;
+}
+
+/* End of CSS File */
+
+ </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-primary fixed-top shadow-lg">
+        <div class="container">
+            <div class="navbar-brand-wrapper">
+                <img src="Logo.png" alt="CloudyMsg Logo" class="navbar-logo">
+                <a class="navbar-brand fw-bold" href="#">CloudyMsg</a>
+            </div>
+            
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="./index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./menu_pages/about_us.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./pricing_tables.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Payments</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">FAQ's</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item ms-2">
+                        <a class="btn btn-outline-light btn-sm me-2" href="./login/login.html">Login</a>
+                        <a class="btn btn-light btn-sm text-primary fw-semibold" href="./login/signup.html">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Premium Communication Solutions</h1>
+                        <p class="hero-subtitle">Boost your business with our reliable SMS, Email, Voice, and WhatsApp API services. Reach millions instantly with enterprise-grade delivery.</p>
+                        <div class="hero-buttons">
+                            <a href="#pricing" class="btn btn-primary btn-lg me-3">View Pricing</a>
+                            <a href="./login/signup.html" class="btn btn-outline-primary btn-lg">Get Started Free</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <div class="floating-card">
+                            <i class="fas fa-envelope fa-3x text-primary mb-3"></i>
+                            <h5>Email Marketing</h5>
+                        </div>
+                        <div class="floating-card">
+                            <i class="fas fa-sms fa-3x text-success mb-3"></i>
+                            <h5>SMS Gateway</h5>
+                        </div>
+                        <div class="floating-card">
+                            <i class="fab fa-whatsapp fa-3x text-success mb-3"></i>
+                            <h5>WhatsApp API</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Choose Your Perfect Plan</h2>
+                <p class="section-subtitle">Flexible pricing options designed to scale with your business needs</p>
+            </div>
+
+            <!-- Bulk Email Pricing -->
+            <div class="pricing-category mb-5">
+                <div class="category-header">
+                    <i class="fas fa-envelope-open-text"></i>
+                    <h3>Bulk Email Services</h3>
+                    <p>High-delivery email marketing solutions</p>
+                </div>
+                
+                <div class="table-container">
+                    <div class="table-responsive">
+                        <table class="table pricing-table">
+                            <thead>
+                                <tr>
+                                    <th>Package</th>
+                                    <th>Credits</th>
+                                    <th>Price</th>
+                                    <th>Per Email</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="featured-row">
+                                    <td><span class="badge bg-success">FREE</span></td>
+                                    <td>10 Credits</td>
+                                    <td class="price">FREE</td>
+                                    <td>-</td>
+                                    <td><button class="btn btn-outline-primary btn-sm">Get Started</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Starter</td>
+                                    <td>25,000 Credits</td>
+                                    <td class="price">₹2,065</td>
+                                    <td>₹0.07</td>
+                                    <td><button class="btn btn-primary btn-sm">Choose Plan</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Growth</td>
+                                    <td>50,000 Credits</td>
+                                    <td class="price">₹3,835</td>
+                                    <td>₹0.065</td>
+                                    <td><button class="btn btn-primary btn-sm">Choose Plan</button></td>
+                                </tr>
+                                <tr class="popular-row">
+                                    <td><span class="badge bg-warning">POPULAR</span> Business</td>
+                                    <td>100,000 Credits</td>
+                                    <td class="price">₹7,080</td>
+                                    <td>₹0.06</td>
+                                    <td><button class="btn btn-warning btn-sm">Choose Plan</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Professional</td>
+                                    <td>250,000 Credits</td>
+                                    <td class="price">₹16,225</td>
+                                    <td>₹0.055</td>
+                                    <td><button class="btn btn-primary btn-sm">Choose Plan</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Enterprise</td>
+                                    <td>500,000 Credits</td>
+                                    <td class="price">₹29,500</td>
+                                    <td>₹0.05</td>
+                                    <td><button class="btn btn-primary btn-sm">Choose Plan</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SMS Pricing -->
+            <div class="pricing-category mb-5">
+                <div class="category-header">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>SMS Services</h3>
+                    <p>Reliable SMS delivery with multiple priority levels</p>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-4 mb-4">
+                        <div class="pricing-card">
+                            <div class="card-header">
+                                <h5>Promotional SMS</h5>
+                                <p class="text-muted">NON-DND (9 AM - 8:30 PM)</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="price-display">
+                                    <span class="currency">₹</span>
+                                    <span class="amount">885</span>
+                                    <span class="period">/2500 SMS</span>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check"></i> Non-DND Numbers</li>
+                                    <li><i class="fas fa-check"></i> Business Hours Only</li>
+                                    <li><i class="fas fa-check"></i> ₹0.30 per SMS</li>
+                                    <li><i class="fas fa-check"></i> Bulk Discounts Available</li>
+                                </ul>
+                                <button class="btn btn-primary w-100">Choose Plan</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 mb-4">
+                        <div class="pricing-card featured">
+                            <div class="popular-badge">Most Popular</div>
+                            <div class="card-header">
+                                <h5>Transactional SMS</h5>
+                                <p class="text-muted">DND (24x7x365)</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="price-display">
+                                    <span class="currency">₹</span>
+                                    <span class="amount">1,180</span>
+                                    <span class="period">/2500 SMS</span>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check"></i> All Numbers (DND)</li>
+                                    <li><i class="fas fa-check"></i> 24/7 Delivery</li>
+                                    <li><i class="fas fa-check"></i> ₹0.40 per SMS</li>
+                                    <li><i class="fas fa-check"></i> Priority Delivery</li>
+                                </ul>
+                                <button class="btn btn-warning w-100">Choose Plan</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 mb-4">
+                        <div class="pricing-card">
+                            <div class="card-header">
+                                <h5>Voice SMS</h5>
+                                <p class="text-muted">Voice Messages</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="price-display">
+                                    <span class="currency">₹</span>
+                                    <span class="amount">2,360</span>
+                                    <span class="period">/5000 Calls</span>
+                                </div>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check"></i> Voice Messages</li>
+                                    <li><i class="fas fa-check"></i> High Engagement</li>
+                                    <li><i class="fas fa-check"></i> ₹0.40 per Call</li>
+                                    <li><i class="fas fa-check"></i> Custom Voice</li>
+                                </ul>
+                                <button class="btn btn-primary w-100">Choose Plan</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WhatsApp API -->
+            <div class="pricing-category mb-5">
+                <div class="category-header">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>WhatsApp API</h3>
+                    <p>Official WhatsApp Business API integration</p>
+                </div>
+                
+                <div class="whatsapp-pricing">
+                    <div class="row">
+                        <div class="col-lg-6 mb-4">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <h5>Virtual Number API</h5>
+                                <p>Use our verified WhatsApp number for your campaigns</p>
+                                <div class="pricing-info">
+                                    <span class="price">₹0.40</span>
+                                    <span class="unit">per message</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-4">
+                            <div class="feature-card premium">
+                                <div class="feature-icon">
+                                    <i class="fas fa-crown"></i>
+                                </div>
+                                <h5>Your Own Number</h5>
+                                <p>Get your business number verified for WhatsApp API</p>
+                                <div class="pricing-info">
+                                    <span class="price">₹0.60</span>
+                                    <span class="unit">per message</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Why Choose CloudyMsg?</h2>
+                <p class="section-subtitle">Powerful features that drive results</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h5>Lightning Fast Delivery</h5>
+                        <p>99.9% delivery rate with instant message processing</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h5>Enterprise Security</h5>
+                        <p>Bank-grade security with end-to-end encryption</p>
+                    </div>
+                </div>
+                                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h5>Real-time Analytics</h5>
+                        <p>Detailed reports and analytics to track your campaigns</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h5>24/7 Support</h5>
+                        <p>Round-the-clock customer support for all your needs</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h5>Easy Integration</h5>
+                        <p>Simple APIs and SDKs for seamless integration</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h5>Global Reach</h5>
+                        <p>Send messages worldwide with local delivery partners</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="cta-title">Ready to Get Started?</h2>
+                    <p class="cta-subtitle">Join thousands of businesses already using CloudyMsg to grow their reach</p>
+                    <div class="cta-buttons">
+                        <a href="./login/signup.html" class="btn btn-light btn-lg me-3">Start Free Trial</a>
+                        <a href="#" class="btn btn-outline-light btn-lg">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-widget">
+                        <h5 class="widget-title">Discover</h5>
+                        <ul class="footer-links">
+                            <li><a href="">About</a></li>
+                            <li><a href="">Pricing</a></li>
+                            <li><a href="">Reseller Program</a></li>
+                            <li><a href="">FAQ</a></li>
+                            <li><a href="">Payment</a></li>
+                            <li><a href="">Blog</a></li>
+                            <li><a href="">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-widget">
+                        <h5 class="widget-title">Services</h5>
+                        <ul class="footer-links">
+                            <li><a href="./service_pages/promotional.html">Promotional SMS</a></li>
+                            <li><a href="./service_pages/transactional.html">Transactional SMS</a></li>
+                            <li><a href="./service_pages/otp_page.html">OTP SMS</a></li>
+                            <li><a href="./service_pages/voice.html">Voice SMS</a></li>
+                            <li><a href="./service_pages/api_index.html">WhatsApp API</a></li>
+                            <li><a href="./service_pages/missedcall_index.html">Missed Call Service</a></li>
+                            <li><a href="./service_pages/email_index.html">Email Marketing</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-widget">
+                        <h5 class="widget-title">Industries</h5>
+                        <ul class="footer-links">
+                            <li><a href="">Banking & Finance</a></li>
+                            <li><a href="">Healthcare</a></li>
+                            <li><a href="">E-Commerce</a></li>
+                            <li><a href="">Education</a></li>
+                            <li><a href="">Real Estate</a></li>
+                            <li><a href="">Travel & Tourism</a></li>
+                            <li><a href="">Technology</a></li>
+                            <li><a href="">Retail</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-widget">
+                        <h5 class="widget-title">Get in Touch</h5>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <p>Old No. 669, New No. 306, Annasalai<br>Thousand Lights, Chennai - 600006</p>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <p>+91 93807 11234</p>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <p>info@cloudymsg.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <h6>Follow Us</h6>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p>&copy; 2025 CloudyMsg. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p>Powered by Gurushasta Innotech</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

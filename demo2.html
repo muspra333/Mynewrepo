@@ -1,0 +1,4232 @@
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans - CloudyMsg Software Solutions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Custom Properties */
+:root {
+    --primary-color: #4f46e5;
+    --secondary-color: #06b6d4;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --dark-color: #1f2937;
+    --light-color: #f8fafc;
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-success: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Utility Classes */
+.text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Navigation Styles */
+.navbar {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    transition: var(--transition);
+}
+
+.navbar-logo {
+    height: 40px;
+    width: auto;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--dark-color) !important;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--dark-color) !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 8px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color) !important;
+    background-color: rgba(79, 70, 229, 0.1);
+}
+
+/* Hero Section */
+.hero-section {
+    background: var(--gradient-primary);
+    padding: 120px 0 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    padding: 120px 0 80px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+}
+
+.pricing-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    opacity: 0.8;
+    margin-top: 0.5rem;
+}
+
+/* Pricing Section */
+.pricing-section {
+    padding: 80px 0;
+    background: #fafbfc;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-size: 1.125rem;
+    color: #6b7280;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Pricing Category */
+.pricing-category {
+    margin-bottom: 5rem;
+}
+
+.category-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.category-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.category-icon.email {
+    background: var(--gradient-primary);
+}
+
+.category-icon.sms {
+    background: var(--gradient-secondary);
+}
+
+.category-icon.whatsapp {
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+}
+
+.category-icon.voice {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+}
+
+.category-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+.category-description {
+    font-size: 1rem;
+    color: #6b7280;
+}
+
+/* Feature Cards */
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.feature-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.feature-card.popular-card {
+    border-color: var(--warning-color);
+    transform: scale(1.05);
+}
+
+.feature-card.premium-card {
+    border-color: var(--primary-color);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--warning-color);
+    color: white;
+    padding: 0.25rem 1rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.feature-card h5 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.feature-card p {
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+}
+
+.pricing-info {
+    margin-bottom: 1.5rem;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+.price .unit {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #6b7280;
+    margin-left: 0.25rem;
+}
+
+/* Pricing Tables */
+.table-container {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    margin-bottom: 3rem;
+}
+
+.pricing-table {
+    width: 100%;
+    margin: 0;
+    border-collapse: collapse;
+}
+
+.pricing-table thead {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+.pricing-table th {
+    padding: 1.5rem 1rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+}
+
+
+.pricing-table td {
+    padding: 1.5rem 1rem;
+    text-align: center;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: middle;
+}
+
+.pricing-table tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+.featured-row {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-left: 4px solid var(--success-color);
+}
+
+.popular-row {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border-left: 4px solid var(--warning-color);
+}
+
+.price-cell {
+    font-weight: 600;
+}
+
+.price-cell .price {
+    font-size: 1.125rem;
+    color: var(--dark-color);
+    display: block;
+}
+
+.price-cell .rate {
+    font-size: 0.75rem;
+    color: #6b7280;
+    display: block;
+    margin-top: 0.25rem;
+}
+
+.plan-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+}
+
+.plan-badge.free {
+    background: var(--success-color);
+    color: white;
+}
+
+.plan-badge.popular {
+    background: var(--warning-color);
+    color: white;
+}
+
+.plan-badge.enterprise {
+    background: var(--dark-color);
+    color: white;
+}
+
+/* Comparison Table */
+.features-section {
+    padding: 80px 0;
+}
+
+.comparison-table-container {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.comparison-table thead {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+.comparison-table th {
+    padding: 1.5rem 1rem;
+    text-align: center;
+    font-weight: 600;
+    border: none;
+}
+
+.comparison-table .feature-column {
+    text-align: left;
+    width: 30%;
+}
+
+.comparison-table .plan-column {
+    width: 17.5%;
+}
+
+.comparison-table .plan-column.popular {
+    background: rgba(245, 158, 11, 0.1);
+    position: relative;
+}
+
+.comparison-table .plan-column.popular::before {
+    content: '⭐ Most Popular';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--warning-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.comparison-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.comparison-table td.popular {
+    background: rgba(245, 158, 11, 0.05);
+}
+
+.feature-name {
+    text-align: left !important;
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.feature-name i {
+    color: var(--primary-color);
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.accordion-item {
+    border: 1px solid #e5e7eb;
+    border-radius: var(--border-radius) !important;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.accordion-button {
+    background: white;
+    border: none;
+    padding: 1.5rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    box-shadow: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+    background: var(--light-color);
+    color: var(--primary-color);
+}
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    transition: var(--transition);
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%234f46e5'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    transform: rotate(-180deg);
+}
+
+.accordion-body {
+    padding: 1.5rem;
+    background: #fafbfc;
+    color: #6b7280;
+    line-height: 1.7;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 80px 0;
+    background: var(--gradient-primary);
+    color: white;
+}
+
+.cta-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    padding: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cta-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.cta-subtitle {
+    font-size: 1.125rem;
+    opacity: 0.9;
+    margin-bottom: 0;
+}
+
+/* Footer */
+.footer {
+    padding: 60px 0 30px;
+    background: var(--dark-color) !important;
+}
+
+.footer-logo {
+    height: 40px;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+
+.footer-brand h5 {
+    color: white;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.footer-brand p {
+    color: #9ca3af;
+    margin-bottom: 0;
+}
+
+.footer-title {
+    color: white;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 0.875rem;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-divider {
+    border-color: #374151;
+    margin: 2rem 0;
+}
+
+.copyright {
+    color: #9ca3af;
+    margin-bottom: 0;
+    font-size: 0.875rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Button Styles */
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    transition: var(--transition);
+    border: none;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+    background: #3730a3;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    color: white;
+}
+
+.btn-outline-primary {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    background: transparent;
+}
+
+.btn-outline-primary:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-warning {
+    background: var(--warning-color);
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+.btn-warning:hover {
+    background: #d97706;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    color: white;
+}
+
+.btn-outline-success {
+    border: 2px solid var(--success-color);
+    color: var(--success-color);
+    background: transparent;
+}
+
+.btn-outline-success:hover {
+    background: var(--success-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-dark {
+    background: var(--dark-color);
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+.btn-dark:hover {
+    background: #111827;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    color: white;
+}
+
+.btn-outline-light {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    background: transparent;
+}
+
+.btn-outline-light:hover {
+    background: white;
+    color: var(--dark-color);
+    border-color: white;
+    transform: translateY(-2px);
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+.btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-fade-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-fade-left {
+    animation: fadeInLeft 0.6s ease-out;
+}
+
+.animate-fade-right {
+    animation: fadeInRight 0.6s ease-out;
+}
+
+/* Intersection Observer Classes */
+.observe-fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.observe-fade.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .section-title {
+        font-size: 2.25rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-stats {
+        gap: 2rem;
+    }
+    
+    .feature-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-card.popular-card {
+        transform: none;
+    }
+    
+    .comparison-table .feature-column {
+        width: 40%;
+    }
+    
+    .comparison-table .plan-column {
+        width: 15%;
+    }
+    
+    .social-links {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section,
+    .pricing-hero {
+        padding: 80px 0 60px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .category-title {
+        font-size: 1.75rem;
+    }
+    
+    .pricing-section,
+    .features-section,
+    .faq-section,
+    .cta-section {
+        padding: 60px 0;
+    }
+    
+    .cta-card {
+        padding: 2rem;
+        text-align: center;
+    }
+    
+    .cta-title {
+        font-size: 1.75rem;
+    }
+    
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .table-responsive {
+        font-size: 0.875rem;
+    }
+    
+    .pricing-table th,
+    .pricing-table td {
+        padding: 1rem 0.5rem;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 0.75rem 0.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .category-title {
+        font-size: 1.5rem;
+    }
+    
+    .feature-card {
+        padding: 1.5rem;
+    }
+    
+    .cta-card {
+        padding: 1.5rem;
+    }
+    
+    .accordion-button,
+    .accordion-body {
+        padding: 1rem;
+    }
+    
+    .footer {
+        padding: 40px 0 20px;
+    }
+    
+    .table-responsive {
+        font-size: 0.75rem;
+    }
+    
+    .pricing-table th,
+    .pricing-table td {
+        padding: 0.75rem 0.25rem;
+    }
+    
+    .btn-sm {
+        padding: 0.375rem 0.75rem;
+        font-size: 0.75rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .cta-section,
+    .footer {
+        display: none;
+    }
+    
+    .pricing-section {
+        padding: 20px 0;
+    }
+    
+    .feature-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .table-container {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-color: #0000ff;
+        --secondary-color: #008080;
+        --success-color: #008000;
+        --warning-color: #ff8c00;
+        --danger-color: #ff0000;
+        --dark-color: #000000;
+    }
+    
+    .feature-card {
+        border: 2px solid #000;
+    }
+    
+    .btn {
+        border: 2px solid currentColor;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .observe-fade {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #e5e5e5;
+    }
+    
+    .pricing-section {
+        background: #2a2a2a;
+    }
+    
+    .features-section {
+        background: #1a1a1a;
+    }
+    
+    .feature-card {
+        background: #2a2a2a;
+        color: #e5e5e5;
+    }
+    
+    .table-container {
+        background: #2a2a2a;
+    }
+    
+    .pricing-table td {
+        border-bottom-color: #404040;
+    }
+    
+    .accordion-item {
+        background: #2a2a2a;
+        border-color: #404040;
+    }
+    
+    .accordion-button {
+        background: #2a2a2a;
+        color: #e5e5e5;
+    }
+    
+    .accordion-body {
+        background: #1a1a1a;
+        color: #b5b5b5;
+    }
+}
+/* Modal and Toast Styles */
+.custom-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.custom-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+}
+
+.custom-modal.show .modal-content {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #6b7280;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+    background: #f3f4f6;
+    color: var(--dark-color);
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+/* Toast Notifications */
+.toast-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    z-index: 10000;
+    transform: translateX(400px);
+    transition: transform 0.3s ease;
+    max-width: 400px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.toast-notification.show {
+    transform: translateX(0);
+}
+
+.toast-notification.success {
+    border-left-color: var(--success-color);
+}
+
+.toast-notification.error {
+    border-left-color: var(--danger-color);
+}
+
+.toast-notification.loading {
+    border-left-color: var(--warning-color);
+}
+
+.toast-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1;
+}
+
+.toast-content i {
+    font-size: 1.25rem;
+}
+
+.toast-notification.success .toast-content i {
+    color: var(--success-color);
+}
+
+.toast-notification.error .toast-content i {
+    color: var(--danger-color);
+}
+
+.toast-notification.loading .toast-content i {
+    color: var(--warning-color);
+}
+
+.toast-close {
+    background: none;
+    border: none;
+    color: #6b7280;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.toast-close:hover {
+    background: #f3f4f6;
+    color: var(--dark-color);
+}
+
+.loading-spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f3f4f6;
+    border-top: 2px solid var(--warning-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Pricing Calculator Styles */
+.pricing-calculator {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 3rem 0;
+    margin: 2rem 0;
+}
+
+.calculator-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.calculator-card h4 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.calculator-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.calculator-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.calculator-form .form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+.calculator-form .form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.calculator-result {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.result-item:last-child {
+    margin-bottom: 0;
+}
+
+.result-label {
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+.result-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Comparison Bar */
+.comparison-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid #e5e7eb;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    z-index: 1000;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.comparison-bar.show {
+    transform: translateY(0);
+}
+
+.comparison-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.comparison-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.comparison-count {
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+/* Plan Comparison Modal */
+.plan-comparison {
+    max-width: 100%;
+}
+
+.comparison-table-wrapper {
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.comparison-table th {
+    background: #f8fafc;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.comparison-table td:first-child {
+    font-weight: 500;
+}
+
+.comparison-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+/* Chat Widget */
+.chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.chat-button {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(79, 70, 229, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.chat-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(79, 70, 229, 0.4);
+}
+
+.chat-button i {
+    font-size: 1.5rem;
+}
+
+.chat-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--danger-color);
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.chat-window {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 350px;
+    height: 400px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.chat-window.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.chat-header {
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 12px 12px 0 0;
+}
+
+.chat-header h6 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.chat-header button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+}
+
+.chat-header button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.chat-body {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.chat-message {
+    padding: 0.75rem 1rem;
+    border-radius: 18px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.chat-message.bot {
+    background: #f3f4f6;
+    color: var(--dark-color);
+    align-self: flex-start;
+}
+
+.chat-message.user {
+    background: var(--primary-color);
+    color: white;
+    align-self: flex-end;
+}
+
+.chat-footer {
+    padding: 1rem;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.chat-footer input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    outline: none;
+    font-size: 0.875rem;
+}
+
+.chat-footer input:focus {
+    border-color: var(--primary-color);
+}
+
+.chat-footer button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.chat-footer button:hover {
+    background: #3730a3;
+}
+
+/* Discount Banner */
+.discount-banner {
+    background: linear-gradient(90deg, var(--warning-color), #f59e0b);
+    color: white;
+    padding: 0.75rem 0;
+    text-align: center;
+    position: relative;
+    z-index: 1001;
+}
+
+.banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.banner-text {
+    font-weight: 500;
+}
+
+.banner-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+}
+
+.banner-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* FAQ Search */
+.faq-search-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.faq-search {
+    padding: 1rem;
+    font-size: 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 50px;
+    transition: border-color 0.2s ease;
+}
+
+.faq-search:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+.currency-selector {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.currency-selector:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.1);
+}
+
+.currency-selector:hover {
+    border-color: var(--primary-color);
+}
+
+/* Custom Tooltip */
+.custom-tooltip {
+    position: absolute;
+    background: var(--dark-color);
+    color: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    z-index: 10001;
+    display: none;
+    pointer-events: none;
+}
+
+.custom-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: var(--dark-color);
+}
+
+/* Animation Classes */
+.observe-fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.observe-fade.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.feature-card {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Plan Selection Styles */
+.plan-confirmation {
+    text-align: center;
+}
+
+.plan-icon {
+    font-size: 3rem;
+    color: var(--success-color);
+    margin-bottom: 1rem;
+}
+
+.selected-plan-details {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.selected-plan-details h6 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+    color: var(--dark-color);
+}
+
+.plan-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.confirmation-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+/* Trial Form Styles */
+.trial-form {
+    text-align: center;
+}
+
+.trial-icon {
+    font-size: 3rem;
+    color: var(--warning-color);
+    margin-bottom: 1rem;
+}
+
+.trial-form h5 {
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.trial-form p {
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+}
+
+.trial-form .form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.trial-form .form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+.trial-form .form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+/* Contact Form Styles */
+.contact-form {
+    text-align: center;
+}
+
+.contact-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.contact-form h5 {
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.contact-form p {
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.contact-form .form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+.contact-form .form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.contact-form textarea.form-control {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Recommendation Styles */
+.recommendation-content {
+    text-align: center;
+}
+
+.recommendation-icon {
+    font-size: 3rem;
+    color: var(--warning-color);
+    margin-bottom: 1rem;
+}
+
+.recommendation-content h5 {
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+}
+
+.recommended-plan {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    background: #f0f9ff;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    border-left: 4px solid var(--primary-color);
+}
+
+.recommendation-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+/* Compare Plan Button */
+.compare-plan {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.compare-plan:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.compare-plan.selected {
+    background: var(--success-color);
+    border-color: var(--success-color);
+    color: white;
+}
+
+.compare-plan.selected:hover {
+    background: #059669;
+    border-color: #059669;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 1rem;
+    }
+    
+    .modal-header,
+    .modal-body {
+        padding: 1rem;
+    }
+    
+    .calculator-card {
+        margin: 0 1rem;
+        padding: 1.5rem;
+    }
+    
+    .comparison-info {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+    }
+    
+    .comparison-actions,
+    .confirmation-actions,
+    .recommendation-actions {
+        flex-direction: column;
+    }
+    
+    .chat-window {
+        width: 300px;
+        height: 350px;
+        right: -25px;
+    }
+    
+    .toast-notification {
+        right: 10px;
+        left: 10px;
+        max-width: none;
+        transform: translateY(-100px);
+    }
+    
+    .toast-notification.show {
+        transform: translateY(0);
+    }
+    
+    .discount-banner .banner-content {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .currency-container {
+        margin: 0.5rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        width: 98%;
+        max-height: 95vh;
+    }
+    
+    .calculator-card {
+        margin: 0 0.5rem;
+        padding: 1rem;
+    }
+    
+    .chat-window {
+        width: 280px;
+        height: 320px;
+        right: -20px;
+        bottom: 70px;
+    }
+    
+    .comparison-table {
+        font-size: 0.75rem;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: 0.5rem;
+    }
+    
+    .result-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+    
+    .banner-text {
+        font-size: 0.875rem;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .modal-content {
+        background: #1f2937;
+        color: white;
+    }
+    
+    .modal-header {
+        border-bottom-color: #374151;
+    }
+    
+    .modal-title {
+        color: white;
+    }
+    
+    .modal-close:hover {
+        background: #374151;
+        color: white;
+    }
+    
+    .calculator-card {
+        background: #1f2937;
+        color: white;
+    }
+    
+    .calculator-form .form-control {
+        background: #374151;
+        border-color: #4b5563;
+        color: white;
+    }
+    
+    .calculator-form .form-control:focus {
+        border-color: var(--primary-color);
+    }
+    
+    .calculator-result {
+        background: #374151;
+    }
+    
+    .toast-notification {
+        background: #1f2937;
+        color: white;
+    }
+    
+    .chat-window {
+        background: #1f2937;
+        color: white;
+    }
+    
+    .chat-header {
+        border-bottom-color: #374151;
+    }
+    
+    .chat-footer {
+        border-top-color: #374151;
+    }
+    
+    .chat-footer input {
+        background: #374151;
+        border-color: #4b5563;
+        color: white;
+    }
+    
+    .chat-message.bot {
+        background: #374151;
+        color: white;
+    }
+    
+    .comparison-table th {
+        background: #374151;
+        color: white;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        border-bottom-color: #4b5563;
+    }
+    
+    .selected-plan-details,
+    .calculator-result {
+        background: #374151;
+    }
+    
+    .recommended-plan {
+        background: #1e3a8a;
+        color: #93c5fd;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .custom-modal,
+    .toast-notification,
+    .chat-widget,
+    .comparison-bar,
+    .discount-banner {
+        display: none !important;
+    }
+    
+    .pricing-calculator {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .calculator-card {
+        box-shadow: none !important;
+        border: 1px solid #ccc;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .modal-content {
+        border: 2px solid black;
+    }
+    
+    .calculator-form .form-control {
+        border: 2px solid black;
+    }
+    
+    .toast-notification {
+        border: 2px solid black;
+    }
+    
+    .chat-window {
+        border: 2px solid black;
+    }
+    
+    .compare-plan {
+        border-width: 3px;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .custom-modal,
+    .modal-content,
+    .toast-notification,
+    .chat-window,
+    .comparison-bar,
+    .observe-fade,
+    .feature-card {
+        transition: none !important;
+        animation: none !important;
+    }
+    
+    .loading-spinner {
+        animation: none !important;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <div class="navbar-brand-wrapper d-flex align-items-center">
+                <img src="Logo.png" alt="CloudyMsg Logo" class="navbar-logo me-3">
+                <a class="navbar-brand fw-bold text-gradient" href="#">
+                    CloudyMsg Software Solutions Pvt Ltd
+                </a>
+            </div>
+            
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./menu_pages/about_us.html">
+                            <i class="fas fa-info-circle me-1"></i>About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./pricing_tables.html">
+                            <i class="fas fa-tags me-1"></i>Pricing
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-credit-card me-1"></i>Payments
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-question-circle me-1"></i>FAQ's
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-blog me-1"></i>Blog
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-envelope me-1"></i>Contact
+                        </a>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <a class="btn btn-outline-primary me-2" href="./login/signup.html">Register</a>
+                        <a class="btn btn-primary" href="./login/login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section pricing-hero">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h1 class="hero-title mb-4 animate-fadeInScale">
+                        Choose Your Perfect <span class="text-gradient">Communication Plan</span>
+                    </h1>
+                    <p class="hero-subtitle mb-5 animate-fadeInScale animate-delay-200">
+                        Affordable pricing for businesses of all sizes. Start with our free tier and scale as you grow.
+                    </p>
+                    <div class="pricing-toggle animate-fadeInScale animate-delay-300">
+                        <div class="toggle-wrapper">
+                            <span class="toggle-label">Monthly</span>
+                            <div class="toggle-switch">
+                                <input type="checkbox" id="pricing-toggle">
+                                <label for="pricing-toggle"></label>
+                            </div>
+                            <span class="toggle-label">Yearly <span class="badge bg-success">Save 20%</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Tables -->
+    <section class="pricing-section">
+        <div class="container">
+            <!-- Bulk Email Section -->
+            <div class="pricing-category mb-5 observe-fade">
+                <div class="category-header text-center mb-5">
+                    <div class="category-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h2 class="category-title">Bulk Email</h2>
+                    <p class="category-description">Reach thousands with our reliable email delivery system</p>
+                </div>
+                
+                <div class="table-container">
+                    <div class="table-responsive">
+                        <table class="pricing-table">
+                            <thead>
+                                <tr>
+                                    <th>Plan</th>
+                                    <th>Credits</th>
+                                    <th>Price</th>
+                                    <th>Per Credit</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="featured-row">
+                                    <td><span class="plan-badge free">FREE</span></td>
+                                    <td><strong>10 Credits</strong></td>
+                                    <td class="price-cell">
+                                        <span class="price">FREE</span>
+                                    </td>
+                                    <td>-</td>
+                                    <td><button class="btn btn-outline-primary btn-sm">Get Started</button></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="plan-badge starter">STARTER</span></td>
+                                    <td><strong>25,000 Credits</strong></td>
+                                    <td class="price-cell">
+                                        <span class="currency">₹</span>
+                                        <span class="price">2,065</span>
+                                    </td>
+                                    <td>₹0.07</td>
+                                    <td><button class="btn btn-primary btn-sm">Choose Plan</button></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="plan-badge">BASIC</span></td>
+                                    <td><strong>50,000 Credits</strong></td>
+                                    <td class="price-cell">
+                                        <span class="currency">₹</span>
+                                        <span class="price">3,835</span>
+                                    </td>
+                                    <td>₹0.065</td>
+                                    <td><button class="btn btn-primary btn-sm">Choose Plan</button></td>
+                                </tr>
+                                <tr class="popular-row">
+                                    <td><span class="plan-badge popular">POPULAR</span></td>
+                                    <td><strong>100,000 Credits</strong></td>
+                                    <td class="price-cell">
+                                        <span class="currency">₹</span>
+                                        <span class="price">7,080</span>
+                                    </td>
+                                    <td>₹0.06</td>
+                                    <td><button class="btn btn-warning btn-sm">Choose Plan</button></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="plan-badge">GROWTH</span></td>
+                                    <td><strong>250,000 Credits</strong></td>
+                                    <td class="price-cell">
+                                        <span class="currency">₹</span>
+                                        <span class="price">16,225</span>
+                                    </td>
+                                    <td>₹0.055</td>
+                                    <td><button class="btn btn-primary btn-sm">Choose Plan</button></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="plan-badge">PRO</span></td>
+                                    <td><strong>500,000 Credits</strong></td>
+                                    <td class="price-cell">
+                                        <span class="currency">₹</span>
+                                        <span class="price">29,500</span>
+                                    </td>
+                                    <td>₹0.05</td>
+                                    <td><button class="btn btn-primary btn-sm">Choose Plan</button></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="plan-badge">BUSINESS</span></td>
+                                    <td><strong>1,000,000 Credits</strong></td>
+                                    <td class="price-cell">
+                                        <span class="currency">₹</span>
+                                        <span class="price">53,100</span>
+                                    </td>
+                                    <td>₹0.045</td>
+                                    <td><button class="btn btn-primary btn-sm">Choose Plan</button></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="plan-badge enterprise">ENTERPRISE</span></td>
+                                    <td><strong>2,500,000 Credits</strong></td>
+                                    <td class="price-cell">
+                                        <span class="currency">₹</span>
+                                        <span class="price">118,000</span>
+                                    </td>
+                                    <td>₹0.04</td>
+                                    <td><button class="btn btn-primary btn-sm">Choose Plan</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SMS Plans Section -->
+            <div class="pricing-category mb-5 observe-fade">
+                <div class="category-header text-center mb-5">
+                    <div class="category-icon">
+                        <i class="fas fa-sms"></i>
+                    </div>
+                    <h2 class="category-title">SMS Plans</h2>
+                    <p class="category-description">Promotional and Transactional SMS services</p>
+                </div>
+                
+                <div class="table-container">
+                    <div class="table-responsive">
+                        <table class="pricing-table sms-table">
+                            <thead>
+                                <tr>
+                                    <th>Credits</th>
+                                    <th>Promotional SMS<br><small>NON-DND (9AM-8:30PM)</small></th>
+                                    <th>Promotional SMS<br><small>DND OPEN (9AM-8:30PM)</small></th>
+                                    <th>Transactional SMS<br><small>DND (24x7x365)</small></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="featured-row">
+                                    <td><strong>10 Credits</strong><br><span class="plan-badge free">FREE</span></td>
+                                    <td class="price-cell">FREE</td>
+                                    <td class="price-cell">FREE</td>
+                                    <td class="price-cell">FREE</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>2,500 Credits</strong></td>
+                                    <td class="price-cell">
+                                        <span class="price">₹885</span>
+                                        <small class="rate">@₹0.30</small>
+                                    </td>
+                                    <td class="price-cell">
+                                        <span class="price">₹1,180</span>
+                                        <small class="rate">@₹0.40</small>
+                                    </td>
+                                    <td class="price-cell">
+                                        <span class="price">₹1,180</span>
+                                        <small class="rate">@₹0.40</small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>5,000 Credits</strong></td>
+                                    <td class="price-cell">
+                                        <span class="price">₹1,180</span>
+                                        <small class="rate">@₹0.40</small>
+                                    </td>
+                                    <td class="price-cell">
+                                        <span class="price">₹1,770</span>
+                                        <small class="rate">@₹0.30</small>
+                                    </td>
+                                    <td class="price-cell">
+                                        <span class="price">₹1,770</span>
+                                        <small class="rate">@₹0.30</small>
+                                    </td>
+                                </tr>
+                                <tr class="popular-row">
+                                    <td><strong>10,000 Credits</strong><br><span class="plan-badge popular">POPULAR</span></td>
+                                    <td class="price-cell">
+                                        <span class="price">₹1,770</span>
+                                        <small class="rate">@₹0.15</small>
+                                    </td>
+                                    <td class="price-cell">
+                                        <span class="price">₹2,360</span>
+                                        <small class="rate">@₹0.20</small>
+                                    </td>
+                                    <td class="price-cell">
+                                        <span class="price">₹2,950</span>
+                                        <small class="rate">@₹0.25</small>
+                                    </td>
+                                </tr>
+                                <!-- Add more rows as needed -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WhatsApp API Section -->
+            <div class="pricing-category mb-5 observe-fade">
+                <div class="category-header text-center mb-5">
+                    <div class="category-icon whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h2 class="category-title">WhatsApp API</h2>
+                    <p class="category-description">Connect with customers on their favorite messaging platform</p>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-4 mb-4">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <h5>Promotional WhatsApp</h5>
+                            <p>Virtual Number<br>9:00 AM - 6:30 PM</p>
+                            <div class="pricing-info">
+                                <div class="price">₹10<span class="unit">per message</span></div>
+                            </div>
+                                                 <button class="btn btn-outline-primary w-100 mt-3">Get Started</button>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <div class="feature-card popular-card">
+                        <div class="popular-badge">Most Popular</div>
+                        <div class="feature-icon">
+                            <i class="fas fa-api"></i>
+                        </div>
+                        <h5>Transactional WhatsApp API</h5>
+                        <p>Virtual Number<br>24 x 7 x 365</p>
+                        <div class="pricing-info">
+                            <div class="price">₹14<span class="unit">per message</span></div>
+                        </div>
+                        <button class="btn btn-primary w-100 mt-3">Choose Plan</button>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <div class="feature-card premium-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h5>Personalized WhatsApp API</h5>
+                        <p>Your Own Number<br>24 x 7 x 365</p>
+                        <div class="pricing-info">
+                            <div class="price">₹20<span class="unit">per message</span></div>
+                        </div>
+                        <button class="btn btn-warning w-100 mt-3">Go Premium</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Detailed WhatsApp Pricing Table -->
+            <div class="table-container mt-5">
+                <div class="table-responsive">
+                    <table class="pricing-table whatsapp-table">
+                        <thead>
+                            <tr>
+                                <th>Credits</th>
+                                <th>Promotional WA<br><small>Virtual No. (9AM-6:30PM)</small></th>
+                                <th>Transactional WA API<br><small>Virtual No. (24x7x365)</small></th>
+                                <th>Personalized WA/API<br><small>Your No. (24x7x365)</small></th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="featured-row">
+                                <td><strong>10 Credits</strong><br><span class="plan-badge free">FREE TRIAL</span></td>
+                                <td class="price-cell">FREE</td>
+                                <td class="price-cell">FREE</td>
+                                <td class="price-cell">FREE</td>
+                                <td><button class="btn btn-outline-success btn-sm">Try Free</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>5,000 Credits</strong></td>
+                                <td class="price-cell">
+                                    <span class="price">₹2,360</span>
+                                    <small class="rate">@₹0.40</small>
+                                </td>
+                                <td class="price-cell">
+                                    <span class="price">₹2,360</span>
+                                    <small class="rate">@₹0.40</small>
+                                </td>
+                                <td class="price-cell">
+                                    <span class="price">₹3,540</span>
+                                    <small class="rate">@₹0.60</small>
+                                </td>
+                                <td><button class="btn btn-primary btn-sm">Select</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>10,000 Credits</strong></td>
+                                <td class="price-cell">
+                                    <span class="price">₹2,950</span>
+                                    <small class="rate">@₹0.25</small>
+                                </td>
+                                <td class="price-cell">
+                                    <span class="price">₹3,540</span>
+                                    <small class="rate">@₹0.30</small>
+                                </td>
+                                <td class="price-cell">
+                                    <span class="price">₹5,900</span>
+                                    <small class="rate">@₹0.50</small>
+                                </td>
+                                <td><button class="btn btn-primary btn-sm">Select</button></td>
+                            </tr>
+                            <tr class="popular-row">
+                                <td><strong>25,000 Credits</strong><br><span class="plan-badge popular">BEST VALUE</span></td>
+                                <td class="price-cell">
+                                    <span class="price">₹5,900</span>
+                                    <small class="rate">@₹0.20</small>
+                                </td>
+                                <td class="price-cell">
+                                    <span class="price">₹7,375</span>
+                                    <small class="rate">@₹0.25</small>
+                                </td>
+                                <td class="price-cell">
+                                    <span class="price">₹13,275</span>
+                                    <small class="rate">@₹0.45</small>
+                                </td>
+                                <td><button class="btn btn-warning btn-sm">Best Choice</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>50,000 Credits</strong></td>
+                                <td class="price-cell">
+                                    <span class="price">₹8,850</span>
+                                    <small class="rate">@₹0.15</small>
+                                </td>
+                                <td class="price-cell">
+                                    <span class="price">₹12,980</span>
+                                    <small class="rate">@₹0.22</small>
+                                </td>
+                                <td class="price-cell">
+                                    <span class="price">₹23,600</span>
+                                    <small class="rate">@₹0.40</small>
+                                </td>
+                                <td><button class="btn btn-primary btn-sm">Select</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>100,000 Credits</strong></td>
+                                <td class="price-cell">
+                                    <span class="price">₹15,340</span>
+                                    <small class="rate">@₹0.13</small>
+                                </td>
+                                <td class="price-cell">
+                                    <span class="price">₹23,600</span>
+                                    <small class="rate">@₹0.20</small>
+                                </td>
+                                <td class="price-cell">
+                                    <span class="price">₹41,300</span>
+                                    <small class="rate">@₹0.35</small>
+                                </td>
+                                <td><button class="btn btn-primary btn-sm">Select</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>2,000,000 Credits</strong><br><span class="plan-badge enterprise">ENTERPRISE</span></td>
+                                <td class="price-cell">
+                                    <span class="price">₹2,12,400</span>
+                                    <small class="rate">@₹0.09</small>
+                                </td>
+                                <td class="price-cell">
+                                    <span class="price">₹2,83,200</span>
+                                    <small class="rate">@₹0.12</small>
+                                </td>
+                                <td class="price-cell">
+                                    <span class="price">₹4,72,000</span>
+                                    <small class="rate">@₹0.20</small>
+                                </td>
+                                <td><button class="btn btn-dark btn-sm">Contact Sales</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Voice Package Section -->
+        <div class="pricing-category mb-5 observe-fade">
+            <div class="category-header text-center mb-5">
+                <div class="category-icon voice">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <h2 class="category-title">Voice Package</h2>
+                <p class="category-description">Automated voice calls for marketing and notifications</p>
+            </div>
+            
+            <div class="table-container">
+                <div class="table-responsive">
+                    <table class="pricing-table voice-table">
+                        <thead>
+                            <tr>
+                                <th>Credits</th>
+                                <th>Promotional Voice<br><small>NON-DND (9AM-8:30PM)</small></th>
+                                <th>Promotional Voice<br><small>DND OPEN (9AM-8:30PM)</small></th>
+                                <th>Transactional Voice<br><small>DND (24x7x365)</small></th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="featured-row">
+                                <td><strong>10 Credits</strong><br><span class="plan-badge free">FREE TRIAL</span></td>
+                                <td class="price-cell">FREE</td>
+                                <td class="price-cell">FREE</td>
+                                <td class="price-cell">FREE</td>
+                                <td><button class="btn btn-outline-success btn-sm">Try Free</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>5,000 Credits</strong></td>
+                                <td class="price-cell">
+                                    <span class="price">₹2,360</span>
+                                    <small class="rate">@₹0.40</small>
+                                </td>
+                                <td class="price-cell">
+                                    <span class="price">₹2,950</span>
+                                    <small class="rate">@₹0.50</small>
+                                </td>
+                                <td class="price-cell">
+                                    <span class="price">₹4,720</span>
+                                    <small class="rate">@₹0.80</small>
+                                </td>
+                                <td><button class="btn btn-primary btn-sm">Select</button></td>
+                            </tr>
+                            <tr class="popular-row">
+                                <td><strong>25,000 Credits</strong><br><span class="plan-badge popular">RECOMMENDED</span></td>
+                                <td class="price-cell">
+                                    <span class="price">₹7,670</span>
+                                    <small class="rate">@₹0.26</small>
+                                </td>
+                                <td class="price-cell">
+                                    <span class="price">₹8,850</span>
+                                    <small class="rate">@₹0.30</small>
+                                </td>
+                                <td class="price-cell">
+                                    <span class="price">₹14,750</span>
+                                    <small class="rate">@₹0.50</small>
+                                </td>
+                                <td><button class="btn btn-warning btn-sm">Best Choice</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>1,000,000 Credits</strong><br><span class="plan-badge enterprise">ENTERPRISE</span></td>
+                                <td class="price-cell">
+                                    <span class="price">₹1,77,000</span>
+                                    <small class="rate">@₹0.15</small>
+                                </td>
+                                <td class="price-cell">
+                                    <span class="price">₹2,12,400</span>
+                                    <small class="rate">@₹0.18</small>
+                                </td>
+                                <td class="price-cell">
+                                    <span class="price">₹3,54,000</span>
+                                    <small class="rate">@₹0.30</small>
+                                </td>
+                                <td><button class="btn btn-dark btn-sm">Contact Sales</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Comparison Section -->
+<section class="features-section bg-light">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <h2 class="section-title">Compare All Features</h2>
+            <p class="section-subtitle">See what's included in each plan</p>
+        </div>
+        
+        <div class="comparison-table-container">
+            <div class="table-responsive">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th class="feature-column">Features</th>
+                            <th class="plan-column">Free</th>
+                            <th class="plan-column popular">Starter</th>
+                            <th class="plan-column">Business</th>
+                            <th class="plan-column">Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="feature-name">
+                                <i class="fas fa-envelope me-2"></i>
+                                Email Credits
+                            </td>
+                            <td>10</td>
+                            <td class="popular">25,000</td>
+                            <td>500,000</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">
+                                <i class="fas fa-sms me-2"></i>
+                                SMS Credits
+                            </td>
+                            <td>10</td>
+                            <td class="popular">2,500</td>
+                            <td>100,000</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">
+                                <i class="fab fa-whatsapp me-2"></i>
+                                WhatsApp API
+                            </td>
+                            <td><i class="fas fa-times text-danger"></i></td>
+                            <td class="popular"><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">
+                                <i class="fas fa-phone me-2"></i>
+                                Voice Calls
+                            </td>
+                            <td><i class="fas fa-times text-danger"></i></td>
+                            <td class="popular"><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                                                <tr>
+                            <td class="feature-name">
+                                <i class="fas fa-chart-bar me-2"></i>
+                                Analytics Dashboard
+                            </td>
+                            <td>Basic</td>
+                            <td class="popular">Advanced</td>
+                            <td>Advanced</td>
+                            <td>Premium</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">
+                                <i class="fas fa-headset me-2"></i>
+                                24/7 Support
+                            </td>
+                            <td><i class="fas fa-times text-danger"></i></td>
+                            <td class="popular">Email</td>
+                            <td>Phone & Email</td>
+                            <td>Dedicated Manager</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">
+                                <i class="fas fa-cogs me-2"></i>
+                                API Access
+                            </td>
+                            <td><i class="fas fa-times text-danger"></i></td>
+                            <td class="popular">Limited</td>
+                            <td>Full Access</td>
+                            <td>Full Access + Custom</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">
+                                <i class="fas fa-users me-2"></i>
+                                Team Members
+                            </td>
+                            <td>1</td>
+                            <td class="popular">5</td>
+                            <td>25</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">
+                                <i class="fas fa-shield-alt me-2"></i>
+                                Priority Delivery
+                            </td>
+                            <td><i class="fas fa-times text-danger"></i></td>
+                            <td class="popular"><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">
+                                <i class="fas fa-database me-2"></i>
+                                Data Retention
+                            </td>
+                            <td>30 days</td>
+                            <td class="popular">90 days</td>
+                            <td>1 year</td>
+                            <td>Unlimited</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <p class="mb-4">Need a custom solution for your business?</p>
+            <a href="#" class="btn btn-primary btn-lg me-3">Contact Sales</a>
+            <a href="#" class="btn btn-outline-primary btn-lg">Schedule Demo</a>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Everything you need to know about our pricing</p>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion" id="pricingFAQ">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="faq1">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+                                <i class="fas fa-question-circle me-2"></i>
+                                How do credits work?
+                            </button>
+                        </h2>
+                        <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#pricingFAQ">
+                            <div class="accordion-body">
+                                Credits are used to send messages across all our platforms. 1 credit = 1 email, 1 SMS, 1 WhatsApp message, or 1 voice call. Credits don't expire and can be used across all services.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="faq2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                                <i class="fas fa-credit-card me-2"></i>
+                                What payment methods do you accept?
+                            </button>
+                        </h2>
+                        <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+                            <div class="accordion-body">
+                                We accept all major credit cards, debit cards, net banking, UPI, and digital wallets. All payments are processed securely through our encrypted payment gateway.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="faq3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                                <i class="fas fa-sync-alt me-2"></i>
+                                Can I upgrade or downgrade my plan?
+                            </button>
+                        </h2>
+                        <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+                            <div class="accordion-body">
+                                Yes, you can upgrade or purchase additional credits anytime. Unused credits from your current plan will be carried forward to your new plan.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="faq4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
+                                <i class="fas fa-clock me-2"></i>
+                                Do credits expire?
+                            </button>
+                        </h2>
+                        <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+                            <div class="accordion-body">
+                                No, your credits never expire. You can use them at your own pace without any time restrictions.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="faq5">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5">
+                                <i class="fas fa-undo me-2"></i>
+                                Is there a refund policy?
+                            </button>
+                        </h2>
+                        <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+                            <div class="accordion-body">
+                                We offer a 7-day money-back guarantee for all paid plans. If you're not satisfied with our service, contact our support team for a full refund.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-card">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h3 class="cta-title">Ready to get started?</h3>
+                    <p class="cta-subtitle">Join thousands of businesses already using CloudyMsg to grow their reach</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a href="./login/signup.html" class="btn btn-primary btn-lg me-3">Start Free Trial</a>
+                    <a href="#" class="btn btn-outline-light btn-lg">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer bg-dark text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="footer-brand">
+                    <img src="Logo.png" alt="CloudyMsg Logo" class="footer-logo mb-3">
+                    <h5>CloudyMsg Software Solutions</h5>
+                    <p>Your trusted partner for comprehensive communication solutions.</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="footer-title">Services</h6>
+                <ul class="footer-links">
+                    <li><a href="#">Bulk Email</a></li>
+                    <li><a href="#">SMS Marketing</a></li>
+                    <li><a href="#">WhatsApp API</a></li>
+                    <li><a href="#">Voice Calls</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="footer-title">Company</h6>
+                <ul class="footer-links">
+                    <li><a href="./menu_pages/about_us.html">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Partners</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="footer-title">Support</h6>
+                <ul class="footer-links">
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">API Reference</a></li>
+                    <li><a href="#">Contact Support</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h6 class="footer-title">Legal</h6>
+                <ul class="footer-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">GDPR</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <hr class="footer-divider">
+        
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p class="copyright">&copy; 2024 CloudyMsg Software Solutions Pvt Ltd. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Pricing Page JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize all functionality
+    initializeIntersectionObserver();
+    initializePricingCalculator();
+    initializeTableInteractions();
+    initializeSmoothScrolling();
+    initializeTooltips();
+    initializeAnimations();
+});
+
+// Intersection Observer for fade-in animations
+function initializeIntersectionObserver() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observe all elements with fade animation class
+    const elementsToObserve = document.querySelectorAll('.observe-fade');
+    elementsToObserve.forEach(element => {
+        observer.observe(element);
+    });
+}
+
+// Pricing Calculator functionality
+function initializePricingCalculator() {
+    const calculatorContainer = document.createElement('div');
+    calculatorContainer.className = 'pricing-calculator';
+    calculatorContainer.innerHTML = `
+        <div class="calculator-card">
+            <h4>Calculate Your Costs</h4>
+            <div class="calculator-form">
+                <div class="form-group">
+                    <label for="messageCount">Number of Messages</label>
+                    <input type="number" id="messageCount" class="form-control" value="1000" min="1">
+                </div>
+                <div class="form-group">
+                    <label for="serviceType">Service Type</label>
+                    <select id="serviceType" class="form-control">
+                        <option value="email">Email</option>
+                        <option value="sms">SMS</option>
+                        <option value="whatsapp">WhatsApp</option>
+                        <option value="voice">Voice</option>
+                    </select>
+                </div>
+                <div class="calculator-result">
+                    <div class="result-item">
+                        <span class="result-label">Estimated Cost:</span>
+                        <span class="result-value" id="calculatedCost">₹0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Cost per Message:</span>
+                        <span class="result-value" id="costPerMessage">₹0</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary w-100" onclick="showPlanRecommendation()">
+                    Get Plan Recommendation
+                </button>
+            </div>
+        </div>
+    `;
+
+    // Insert calculator after hero section
+    const heroSection = document.querySelector('.pricing-hero');
+    if (heroSection) {
+        heroSection.parentNode.insertBefore(calculatorContainer, heroSection.nextSibling);
+    }
+
+    // Add event listeners for calculator
+    document.getElementById('messageCount').addEventListener('input', calculatePricing);
+    document.getElementById('serviceType').addEventListener('change', calculatePricing);
+
+    // Initial calculation
+    calculatePricing();
+}
+
+// Calculate pricing based on inputs
+function calculatePricing() {
+    const messageCount = parseInt(document.getElementById('messageCount').value) || 0;
+    const serviceType = document.getElementById('serviceType').value;
+    
+    const pricingRates = {
+        email: {
+            tiers: [
+                { min: 0, max: 25000, rate: 0.05 },
+                { min: 25001, max: 100000, rate: 0.04 },
+                { min: 100001, max: 500000, rate: 0.03 },
+                { min: 500001, max: Infinity, rate: 0.02 }
+            ]
+        },
+        sms: {
+            tiers: [
+                { min: 0, max: 5000, rate: 0.25 },
+                { min: 5001, max: 25000, rate: 0.20 },
+                { min: 25001, max: 100000, rate: 0.15 },
+                { min: 100001, max: Infinity, rate: 0.12 }
+            ]
+        },
+        whatsapp: {
+            tiers: [
+                { min: 0, max: 5000, rate: 0.40 },
+                { min: 5001, max: 25000, rate: 0.25 },
+                { min: 25001, max: 100000, rate: 0.20 },
+                { min: 100001, max: Infinity, rate: 0.15 }
+            ]
+        },
+        voice: {
+            tiers: [
+                { min: 0, max: 5000, rate: 0.40 },
+                { min: 5001, max: 25000, rate: 0.30 },
+                { min: 25001, max: 100000, rate: 0.25 },
+                { min: 100001, max: Infinity, rate: 0.18 }
+            ]
+        }
+    };
+
+    const servicePricing = pricingRates[serviceType];
+    const applicableTier = servicePricing.tiers.find(tier => 
+        messageCount >= tier.min && messageCount <= tier.max
+    );
+
+    const costPerMessage = applicableTier ? applicableTier.rate : 0;
+    const totalCost = messageCount * costPerMessage;
+
+    document.getElementById('calculatedCost').textContent = `₹${totalCost.toLocaleString('en-IN')}`;
+    document.getElementById('costPerMessage').textContent = `₹${costPerMessage.toFixed(2)}`;
+}
+
+// Show plan recommendation modal
+function showPlanRecommendation() {
+    const messageCount = parseInt(document.getElementById('messageCount').value) || 0;
+    const serviceType = document.getElementById('serviceType').value;
+    
+    let recommendedPlan = '';
+    if (messageCount <= 10) {
+        recommendedPlan = 'Free Trial (10 Credits)';
+    } else if (messageCount <= 5000) {
+        recommendedPlan = 'Starter Plan (5,000 Credits)';
+    } else if (messageCount <= 25000) {
+        recommendedPlan = 'Business Plan (25,000 Credits)';
+    } else if (messageCount <= 100000) {
+        recommendedPlan = 'Professional Plan (100,000 Credits)';
+    } else {
+        recommendedPlan = 'Enterprise Plan (Custom)';
+    }
+
+    showModal('Plan Recommendation', `
+        <div class="recommendation-content">
+            <div class="recommendation-icon">
+                <i class="fas fa-lightbulb"></i>
+            </div>
+            <h5>Recommended Plan</h5>
+            <p class="recommended-plan">${recommendedPlan}</p>
+            <p>Based on your requirement of ${messageCount.toLocaleString()} ${serviceType} messages.</p>
+            <div class="recommendation-actions">
+                <button class="btn btn-primary" onclick="scrollToPlan('${serviceType}')">View Plans</button>
+                <button class="btn btn-outline-primary" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    `);
+}
+
+// Table interactions
+function initializeTableInteractions() {
+    // Add hover effects to table rows
+    const tableRows = document.querySelectorAll('.pricing-table tbody tr');
+    tableRows.forEach(row => {
+        row.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.02)';
+            this.style.transition = 'all 0.3s ease';
+        });
+        
+        row.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
+    });
+
+    // Add click handlers to plan buttons
+    const planButtons = document.querySelectorAll('.pricing-table button');
+    planButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const buttonText = this.textContent.trim();
+            
+            if (buttonText === 'Try Free') {
+                handleFreeTrial();
+            } else if (buttonText === 'Contact Sales') {
+                handleContactSales();
+            } else {
+                handlePlanSelection(this);
+            }
+        });
+    });
+}
+
+// Handle free trial signup
+function handleFreeTrial() {
+    showModal('Start Free Trial', `
+        <div class="trial-form">
+            <div class="trial-icon">
+                <i class="fas fa-gift"></i>
+            </div>
+            <h5>Start Your Free Trial</h5>
+            <p>Get 10 free credits to test our services</p>
+            <form id="trialForm">
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Company name" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" class="form-control" placeholder="Phone number" required>
+                </div>
+                <button type="submit" class="btn btn-success w-100">Start Free Trial</button>
+            </form>
+        </div>
+    `);
+
+    document.getElementById('trialForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Simulate form submission
+        showSuccessMessage('Free trial activated! Check your email for login details.');
+        closeModal();
+    });
+}
+
+// Handle contact sales
+function handleContactSales() {
+    showModal('Contact Sales', `
+        <div class="contact-form">
+            <div class="contact-icon">
+                <i class="fas fa-headset"></i>
+            </div>
+            <h5>Contact Our Sales Team</h5>
+            <p>Get a custom quote for your business needs</p>
+            <form id="contactForm">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="First Name" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Last Name" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Business Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Company Name" required>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" required>
+                        <option value="">Expected Monthly Volume</option>
+                        <option value="10k-50k">10,000 - 50,000</option>
+                        <option value="50k-100k">50,000 - 100,000</option>
+                        <option value="100k-500k">100,000 - 500,000</option>
+                        <option value="500k+">500,000+</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" rows="3" placeholder="Tell us about your requirements"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Request Quote</button>
+            </form>
+        </div>
+    `);
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        showSuccessMessage('Thank you! Our sales team will contact you within 24 hours.');
+        closeModal();
+    });
+}
+
+// Handle plan selection
+function handlePlanSelection(button) {
+    const row = button.closest('tr');
+    const planName = row.querySelector('td:first-child strong').textContent;
+    const price = row.querySelector('.price').textContent;
+    
+    showModal('Confirm Plan Selection', `
+        <div class="plan-confirmation">
+            <div class="plan-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h5>Selected Plan</h5>
+            <div class="selected-plan-details">
+                <h6>${planName}</h6>
+                <p class="plan-price">${price}</p>
+            </div>
+            <p>You'll be redirected to our secure checkout page.</p>
+            <div class="confirmation-actions">
+                <button class="btn btn-primary" onclick="proceedToCheckout('${planName}')">
+                    Proceed to Checkout
+                </button>
+                <button class="btn btn-outline-secondary" onclick="closeModal()">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    `);
+}
+
+// Proceed to checkout
+function proceedToCheckout(planName) {
+    // Simulate checkout process
+    showLoadingMessage('Redirecting to checkout...');
+    setTimeout(() => {
+        closeModal();
+        showSuccessMessage(`Redirecting to checkout for ${planName}`);
+        // In real implementation, redirect to payment gateway
+        // window.location.href = '/checkout?plan=' + encodeURIComponent(planName);
+    }, 2000);
+}
+
+// Smooth scrolling functionality
+function initializeSmoothScrolling() {
+    const links = document.querySelectorAll('a[href^="#"]');
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+}
+
+// Scroll to specific plan section
+function scrollToPlan(serviceType) {
+    const sectionMap = {
+        'email': '.email-section',
+        'sms': '.sms-section',
+        'whatsapp': '.whatsapp-section',
+        'voice': '.voice-section'
+    };
+    
+    const targetSelector = sectionMap[serviceType] || '.pricing-section';
+    const targetElement = document.querySelector(targetSelector);
+    
+    if (targetElement) {
+        targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+    
+    closeModal();
+}
+
+// Initialize tooltips
+function initializeTooltips() {
+    // Create tooltip elements for pricing information
+    const tooltipTriggers = document.querySelectorAll('[data-tooltip]');
+    
+    tooltipTriggers.forEach(trigger => {
+        const tooltip = document.createElement('div');
+        tooltip.className = 'custom-tooltip';
+        tooltip.textContent = trigger.getAttribute('data-tooltip');
+        document.body.appendChild(tooltip);
+        
+        trigger.addEventListener('mouseenter', function(e) {
+            tooltip.style.display = 'block';
+            tooltip.style.left = e.pageX + 10 + 'px';
+            tooltip.style.top = e.pageY - 30 + 'px';
+        });
+        
+        trigger.addEventListener('mouseleave', function() {
+            tooltip.style.display = 'none';
+        });
+                trigger.addEventListener('mousemove', function(e) {
+            tooltip.style.left = e.pageX + 10 + 'px';
+            tooltip.style.top = e.pageY - 30 + 'px';
+        });
+    });
+}
+
+// Initialize animations
+function initializeAnimations() {
+    // Counter animation for statistics
+    const counters = document.querySelectorAll('.stat-number');
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    });
+
+    counters.forEach(counter => {
+        counterObserver.observe(counter);
+    });
+
+    // Stagger animation for feature cards
+    const featureCards = document.querySelectorAll('.feature-card');
+    featureCards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.1}s`;
+        card.classList.add('observe-fade');
+    });
+
+    // Pricing table row animations
+    const tableRows = document.querySelectorAll('.pricing-table tbody tr');
+    tableRows.forEach((row, index) => {
+        row.style.animationDelay = `${index * 0.05}s`;
+        row.classList.add('observe-fade');
+    });
+}
+
+// Animate counter numbers
+function animateCounter(element) {
+    const target = parseInt(element.textContent.replace(/[^\d]/g, ''));
+    const duration = 2000;
+    const step = target / (duration / 16);
+    let current = 0;
+
+    const timer = setInterval(() => {
+        current += step;
+        if (current >= target) {
+            current = target;
+            clearInterval(timer);
+        }
+        
+        // Format number with appropriate suffix
+        let displayValue = Math.floor(current);
+        if (target >= 1000000) {
+            displayValue = (displayValue / 1000000).toFixed(1) + 'M+';
+        } else if (target >= 1000) {
+            displayValue = (displayValue / 1000).toFixed(0) + 'K+';
+        } else {
+            displayValue = displayValue + '+';
+        }
+        
+        element.textContent = displayValue;
+    }, 16);
+}
+
+// Modal functionality
+function showModal(title, content) {
+    // Remove existing modal if any
+    const existingModal = document.querySelector('.custom-modal');
+    if (existingModal) {
+        existingModal.remove();
+    }
+
+    const modal = document.createElement('div');
+    modal.className = 'custom-modal';
+    modal.innerHTML = `
+        <div class="modal-backdrop" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">${title}</h4>
+                <button class="modal-close" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                ${content}
+            </div>
+        </div>
+    `;
+
+    document.body.appendChild(modal);
+    document.body.style.overflow = 'hidden';
+    
+    // Animate modal in
+    setTimeout(() => {
+        modal.classList.add('show');
+    }, 10);
+}
+
+// Close modal
+function closeModal() {
+    const modal = document.querySelector('.custom-modal');
+    if (modal) {
+        modal.classList.remove('show');
+        setTimeout(() => {
+            modal.remove();
+            document.body.style.overflow = '';
+        }, 300);
+    }
+}
+
+// Show success message
+function showSuccessMessage(message) {
+    const toast = document.createElement('div');
+    toast.className = 'toast-notification success';
+    toast.innerHTML = `
+        <div class="toast-content">
+            <i class="fas fa-check-circle"></i>
+            <span>${message}</span>
+        </div>
+        <button class="toast-close" onclick="this.parentElement.remove()">
+            <i class="fas fa-times"></i>
+        </button>
+    `;
+
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+        toast.classList.add('show');
+    }, 10);
+
+    setTimeout(() => {
+        toast.remove();
+    }, 5000);
+}
+
+// Show loading message
+function showLoadingMessage(message) {
+    const toast = document.createElement('div');
+    toast.className = 'toast-notification loading';
+    toast.innerHTML = `
+        <div class="toast-content">
+            <div class="loading-spinner"></div>
+            <span>${message}</span>
+        </div>
+    `;
+
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+        toast.classList.add('show');
+    }, 10);
+}
+
+// Show error message
+function showErrorMessage(message) {
+    const toast = document.createElement('div');
+    toast.className = 'toast-notification error';
+    toast.innerHTML = `
+        <div class="toast-content">
+            <i class="fas fa-exclamation-circle"></i>
+            <span>${message}</span>
+        </div>
+        <button class="toast-close" onclick="this.parentElement.remove()">
+            <i class="fas fa-times"></i>
+        </button>
+    `;
+
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+        toast.classList.add('show');
+    }, 10);
+
+    setTimeout(() => {
+        toast.remove();
+    }, 5000);
+}
+
+// Price comparison functionality
+function initializePriceComparison() {
+    const compareButtons = document.querySelectorAll('.compare-plan');
+    const selectedPlans = new Set();
+
+    compareButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const planId = this.getAttribute('data-plan-id');
+            
+            if (selectedPlans.has(planId)) {
+                selectedPlans.delete(planId);
+                this.classList.remove('selected');
+                this.innerHTML = '<i class="fas fa-plus"></i> Compare';
+            } else {
+                if (selectedPlans.size >= 3) {
+                    showErrorMessage('You can compare maximum 3 plans at a time');
+                    return;
+                }
+                selectedPlans.add(planId);
+                this.classList.add('selected');
+                this.innerHTML = '<i class="fas fa-check"></i> Selected';
+            }
+
+            updateComparisonBar(selectedPlans);
+        });
+    });
+}
+
+// Update comparison bar
+function updateComparisonBar(selectedPlans) {
+    let comparisonBar = document.querySelector('.comparison-bar');
+    
+    if (selectedPlans.size === 0) {
+        if (comparisonBar) {
+            comparisonBar.remove();
+        }
+        return;
+    }
+
+    if (!comparisonBar) {
+        comparisonBar = document.createElement('div');
+        comparisonBar.className = 'comparison-bar';
+        document.body.appendChild(comparisonBar);
+    }
+
+    comparisonBar.innerHTML = `
+        <div class="comparison-content">
+            <div class="comparison-info">
+                <span class="comparison-count">${selectedPlans.size} plan${selectedPlans.size > 1 ? 's' : ''} selected</span>
+                <button class="btn btn-primary btn-sm" onclick="showComparison()">
+                    Compare Plans
+                </button>
+                <button class="btn btn-outline-secondary btn-sm" onclick="clearComparison()">
+                    Clear All
+                </button>
+            </div>
+        </div>
+    `;
+
+    comparisonBar.classList.add('show');
+}
+
+// Show comparison modal
+function showComparison() {
+    const selectedPlans = document.querySelectorAll('.compare-plan.selected');
+    const comparisonData = Array.from(selectedPlans).map(button => {
+        const card = button.closest('.feature-card');
+        return {
+            name: card.querySelector('h5').textContent,
+            price: card.querySelector('.price').textContent,
+            features: Array.from(card.querySelectorAll('.feature-list li')).map(li => li.textContent)
+        };
+    });
+
+    const comparisonTable = generateComparisonTable(comparisonData);
+    
+    showModal('Plan Comparison', `
+        <div class="plan-comparison">
+            ${comparisonTable}
+            <div class="comparison-actions">
+                <button class="btn btn-primary" onclick="closeModal()">Close</button>
+                <button class="btn btn-outline-primary" onclick="clearComparison(); closeModal();">
+                    Clear Selection
+                </button>
+            </div>
+        </div>
+    `);
+}
+
+// Generate comparison table
+function generateComparisonTable(plans) {
+    if (plans.length === 0) return '<p>No plans selected for comparison.</p>';
+
+    let table = '<div class="comparison-table-wrapper"><table class="table comparison-table">';
+    
+    // Header
+    table += '<thead><tr><th>Feature</th>';
+    plans.forEach(plan => {
+        table += `<th>${plan.name}</th>`;
+    });
+    table += '</tr></thead><tbody>';
+
+    // Price row
+    table += '<tr><td><strong>Price</strong></td>';
+    plans.forEach(plan => {
+        table += `<td><strong>${plan.price}</strong></td>`;
+    });
+    table += '</tr>';
+
+    // Feature rows
+    const allFeatures = [...new Set(plans.flatMap(plan => plan.features))];
+    allFeatures.forEach(feature => {
+        table += `<tr><td>${feature}</td>`;
+        plans.forEach(plan => {
+            const hasFeature = plan.features.includes(feature);
+            table += `<td>${hasFeature ? '<i class="fas fa-check text-success"></i>' : '<i class="fas fa-times text-danger"></i>'}</td>`;
+        });
+        table += '</tr>';
+    });
+
+    table += '</tbody></table></div>';
+    return table;
+}
+
+// Clear comparison
+function clearComparison() {
+    const selectedButtons = document.querySelectorAll('.compare-plan.selected');
+    selectedButtons.forEach(button => {
+        button.classList.remove('selected');
+        button.innerHTML = '<i class="fas fa-plus"></i> Compare';
+    });
+
+    const comparisonBar = document.querySelector('.comparison-bar');
+    if (comparisonBar) {
+        comparisonBar.remove();
+    }
+}
+
+// FAQ search functionality
+function initializeFAQSearch() {
+    const searchInput = document.createElement('input');
+    searchInput.type = 'text';
+    searchInput.className = 'form-control faq-search';
+    searchInput.placeholder = 'Search frequently asked questions...';
+    
+    const faqSection = document.querySelector('.faq-section .container');
+    if (faqSection) {
+        const searchContainer = document.createElement('div');
+        searchContainer.className = 'faq-search-container mb-4';
+        searchContainer.appendChild(searchInput);
+        
+        const sectionHeader = faqSection.querySelector('.section-header');
+        sectionHeader.parentNode.insertBefore(searchContainer, sectionHeader.nextSibling);
+    }
+
+    searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        const faqItems = document.querySelectorAll('.accordion-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.accordion-button').textContent.toLowerCase();
+            const answer = item.querySelector('.accordion-body').textContent.toLowerCase();
+            
+            if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = searchTerm === '' ? 'block' : 'none';
+            }
+        });
+    });
+}
+
+// Initialize currency converter
+function initializeCurrencyConverter() {
+    const currencySelector = document.createElement('select');
+    currencySelector.className = 'form-select currency-selector';
+    currencySelector.innerHTML = `
+        <option value="INR">₹ INR</option>
+        <option value="USD">$ USD</option>
+        <option value="EUR">€ EUR</option>
+        <option value="GBP">£ GBP</option>
+    `;
+
+    const navbar = document.querySelector('.navbar .container');
+    if (navbar) {
+        const currencyContainer = document.createElement('div');
+        currencyContainer.className = 'currency-container';
+        currencyContainer.appendChild(currencySelector);
+        navbar.appendChild(currencyContainer);
+    }
+
+    currencySelector.addEventListener('change', function() {
+        convertCurrency(this.value);
+    });
+}
+
+// Convert currency (simplified - in real app, use live exchange rates)
+function convertCurrency(targetCurrency) {
+    const exchangeRates = {
+        'INR': 1,
+        'USD': 0.012,
+        'EUR': 0.011,
+        'GBP': 0.0095
+    };
+
+    const currencySymbols = {
+        'INR': '₹',
+        'USD': '$',
+        'EUR': '€',
+        'GBP': '£'
+    };
+
+    const priceElements = document.querySelectorAll('.price, .result-value');
+    priceElements.forEach(element => {
+        const currentPrice = parseFloat(element.textContent.replace(/[^\d.]/g, ''));
+        if (!isNaN(currentPrice)) {
+            const convertedPrice = currentPrice * exchangeRates[targetCurrency];
+            const formattedPrice = currencySymbols[targetCurrency] + convertedPrice.toLocaleString();
+            element.textContent = formattedPrice;
+        }
+    });
+}
+
+// Keyboard navigation for accessibility
+function initializeKeyboardNavigation() {
+    document.addEventListener('keydown', function(e) {
+        // ESC key to close modal
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+        
+        // Tab navigation for pricing cards
+        if (e.key === 'Tab') {
+            const focusableElements = document.querySelectorAll(
+                'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+            );
+            
+            // Add visual focus indicators
+            focusableElements.forEach(element => {
+                element.addEventListener('focus', function() {
+                    this.style.outline = '2px solid var(--primary-color)';
+                    this.style.outlineOffset = '2px';
+                });
+                
+                element.addEventListener('blur', function() {
+                    this.style.outline = '';
+                    this.style.outlineOffset = '';
+                });
+            });
+        }
+    });
+}
+
+// Performance optimization - Lazy load images
+function initializeLazyLoading() {
+    const images = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+
+    images.forEach(img => imageObserver.observe(img));
+}
+// Analytics tracking (placeholder)
+function trackEvent(eventName, eventData) {
+    // In a real application, this would send data to analytics service
+    console.log('Analytics Event:', eventName, eventData);
+    
+    // Example: Google Analytics 4
+    // gtag('event', eventName, eventData);
+    
+    // Example: Facebook Pixel
+    // fbq('track', eventName, eventData);
+    
+    // Example: Custom analytics endpoint
+    // fetch('/api/analytics', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({ event: eventName, data: eventData })
+    // });
+}
+
+// Track pricing page interactions
+function initializeAnalytics() {
+    // Track page view
+    trackEvent('page_view', {
+        page_title: document.title,
+        page_location: window.location.href,
+        page_path: window.location.pathname
+    });
+
+    // Track plan button clicks
+    document.addEventListener('click', function(e) {
+        if (e.target.matches('.btn-primary, .btn-warning, .btn-success')) {
+            const buttonText = e.target.textContent.trim();
+            const planCard = e.target.closest('.feature-card');
+            const planName = planCard ? planCard.querySelector('h5').textContent : 'Unknown';
+            
+            trackEvent('plan_button_click', {
+                button_text: buttonText,
+                plan_name: planName,
+                button_position: Array.from(document.querySelectorAll('.btn')).indexOf(e.target)
+            });
+        }
+        
+        // Track calculator usage
+        if (e.target.matches('#calculatedCost, #costPerMessage')) {
+            trackEvent('calculator_interaction', {
+                element: e.target.id,
+                message_count: document.getElementById('messageCount').value,
+                service_type: document.getElementById('serviceType').value
+            });
+        }
+        
+        // Track FAQ interactions
+        if (e.target.matches('.accordion-button')) {
+            const faqQuestion = e.target.textContent.trim();
+            trackEvent('faq_click', {
+                question: faqQuestion,
+                expanded: !e.target.classList.contains('collapsed')
+            });
+        }
+    });
+
+    // Track form submissions
+    document.addEventListener('submit', function(e) {
+        const formId = e.target.id;
+        const formData = new FormData(e.target);
+        const formFields = Object.fromEntries(formData.entries());
+        
+        trackEvent('form_submit', {
+            form_id: formId,
+            form_type: formId.includes('trial') ? 'trial' : 'contact',
+            fields_count: Object.keys(formFields).length
+        });
+    });
+
+    // Track scroll depth
+    let maxScrollDepth = 0;
+    window.addEventListener('scroll', throttle(function() {
+        const scrollDepth = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+        if (scrollDepth > maxScrollDepth) {
+            maxScrollDepth = scrollDepth;
+            if (maxScrollDepth % 25 === 0) { // Track at 25%, 50%, 75%, 100%
+                trackEvent('scroll_depth', {
+                    depth_percentage: maxScrollDepth
+                });
+            }
+        }
+    }, 1000));
+}
+
+// Throttle function for performance
+function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    };
+}
+
+// Debounce function for performance
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Error handling and logging
+function initializeErrorHandling() {
+    window.addEventListener('error', function(e) {
+        console.error('JavaScript Error:', e.error);
+        trackEvent('javascript_error', {
+            message: e.message,
+            filename: e.filename,
+            lineno: e.lineno,
+            colno: e.colno
+        });
+    });
+
+    window.addEventListener('unhandledrejection', function(e) {
+        console.error('Unhandled Promise Rejection:', e.reason);
+        trackEvent('promise_rejection', {
+            reason: e.reason.toString()
+        });
+    });
+}
+
+// Performance monitoring
+function initializePerformanceMonitoring() {
+    // Monitor page load performance
+    window.addEventListener('load', function() {
+        setTimeout(() => {
+            const perfData = performance.getEntriesByType('navigation')[0];
+            trackEvent('page_performance', {
+                load_time: Math.round(perfData.loadEventEnd - perfData.fetchStart),
+                dom_content_loaded: Math.round(perfData.domContentLoadedEventEnd - perfData.fetchStart),
+                first_paint: Math.round(performance.getEntriesByType('paint')[0]?.startTime || 0)
+            });
+        }, 0);
+    });
+
+    // Monitor Core Web Vitals
+    if ('web-vital' in window) {
+        import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
+            getCLS(metric => trackEvent('web_vital', { name: 'CLS', value: metric.value }));
+            getFID(metric => trackEvent('web_vital', { name: 'FID', value: metric.value }));
+            getFCP(metric => trackEvent('web_vital', { name: 'FCP', value: metric.value }));
+            getLCP(metric => trackEvent('web_vital', { name: 'LCP', value: metric.value }));
+            getTTFB(metric => trackEvent('web_vital', { name: 'TTFB', value: metric.value }));
+        });
+    }
+}
+
+// A/B Testing framework
+function initializeABTesting() {
+    const experiments = {
+        'pricing_layout': {
+            variants: ['control', 'variant_a', 'variant_b'],
+            weights: [0.33, 0.33, 0.34]
+        },
+        'cta_button_text': {
+            variants: ['Get Started', 'Start Free Trial', 'Try Now'],
+            weights: [0.33, 0.33, 0.34]
+        }
+    };
+
+    Object.keys(experiments).forEach(experimentName => {
+        const experiment = experiments[experimentName];
+        const variant = selectVariant(experiment.variants, experiment.weights);
+        
+        // Store variant in session storage
+        sessionStorage.setItem(`experiment_${experimentName}`, variant);
+        
+        // Apply variant
+        applyExperimentVariant(experimentName, variant);
+        
+        // Track experiment exposure
+        trackEvent('experiment_exposure', {
+            experiment_name: experimentName,
+            variant: variant
+        });
+    });
+}
+
+// Select variant based on weights
+function selectVariant(variants, weights) {
+    const random = Math.random();
+    let cumulativeWeight = 0;
+    
+    for (let i = 0; i < variants.length; i++) {
+        cumulativeWeight += weights[i];
+        if (random <= cumulativeWeight) {
+            return variants[i];
+        }
+    }
+    
+    return variants[variants.length - 1];
+}
+
+// Apply experiment variant
+function applyExperimentVariant(experimentName, variant) {
+    switch (experimentName) {
+        case 'pricing_layout':
+            if (variant === 'variant_a') {
+                document.body.classList.add('pricing-layout-a');
+            } else if (variant === 'variant_b') {
+                document.body.classList.add('pricing-layout-b');
+            }
+            break;
+            
+        case 'cta_button_text':
+            const ctaButtons = document.querySelectorAll('.btn-primary');
+            ctaButtons.forEach(button => {
+                if (button.textContent.includes('Get Started')) {
+                    button.textContent = variant === 'control' ? 'Get Started' : 
+                                       variant === 'variant_a' ? 'Start Free Trial' : 'Try Now';
+                }
+            });
+            break;
+    }
+}
+
+// Feature flags system
+const featureFlags = {
+    'show_calculator': true,
+    'enable_comparison': true,
+    'show_testimonials': false,
+    'enable_chat_widget': true,
+    'show_discount_banner': false
+};
+
+function isFeatureEnabled(flagName) {
+    return featureFlags[flagName] === true;
+}
+
+// Apply feature flags
+function applyFeatureFlags() {
+    if (!isFeatureEnabled('show_calculator')) {
+        const calculator = document.querySelector('.pricing-calculator');
+        if (calculator) calculator.style.display = 'none';
+    }
+    
+    if (!isFeatureEnabled('enable_comparison')) {
+        const compareButtons = document.querySelectorAll('.compare-plan');
+        compareButtons.forEach(button => button.style.display = 'none');
+    }
+    
+    if (isFeatureEnabled('show_discount_banner')) {
+        showDiscountBanner();
+    }
+    
+    if (isFeatureEnabled('enable_chat_widget')) {
+        loadChatWidget();
+    }
+}
+
+// Show discount banner
+function showDiscountBanner() {
+    const banner = document.createElement('div');
+    banner.className = 'discount-banner';
+    banner.innerHTML = `
+        <div class="banner-content">
+            <span class="banner-text">🎉 Limited Time: Get 20% off on all plans! Use code SAVE20</span>
+            <button class="banner-close" onclick="this.parentElement.parentElement.remove()">×</button>
+        </div>
+    `;
+    
+    document.body.insertBefore(banner, document.body.firstChild);
+}
+
+// Load chat widget
+function loadChatWidget() {
+    const chatWidget = document.createElement('div');
+    chatWidget.className = 'chat-widget';
+    chatWidget.innerHTML = `
+        <div class="chat-button" onclick="toggleChat()">
+            <i class="fas fa-comments"></i>
+            <span class="chat-badge">1</span>
+        </div>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <h6>Need Help?</h6>
+                <button onclick="toggleChat()">×</button>
+            </div>
+            <div class="chat-body">
+                <div class="chat-message bot">
+                    Hi! I'm here to help you choose the right plan. What questions do you have?
+                </div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" placeholder="Type your message..." id="chatInput">
+                <button onclick="sendChatMessage()">Send</button>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(chatWidget);
+}
+
+// Toggle chat window
+function toggleChat() {
+    const chatWindow = document.getElementById('chatWindow');
+    chatWindow.classList.toggle('open');
+    
+    // Remove notification badge
+    const badge = document.querySelector('.chat-badge');
+    if (badge) badge.style.display = 'none';
+}
+
+// Send chat message
+function sendChatMessage() {
+    const input = document.getElementById('chatInput');
+    const message = input.value.trim();
+    
+    if (message) {
+        const chatBody = document.querySelector('.chat-body');
+        
+        // Add user message
+        const userMessage = document.createElement('div');
+        userMessage.className = 'chat-message user';
+        userMessage.textContent = message;
+        chatBody.appendChild(userMessage);
+        
+        // Simulate bot response
+        setTimeout(() => {
+            const botMessage = document.createElement('div');
+            botMessage.className = 'chat-message bot';
+            botMessage.textContent = getBotResponse(message);
+            chatBody.appendChild(botMessage);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }, 1000);
+        
+        input.value = '';
+        chatBody.scrollTop = chatBody.scrollHeight;
+        
+        // Track chat interaction
+        trackEvent('chat_message', {
+            message_length: message.length,
+            message_type: 'user'
+        });
+    }
+}
+
+// Get bot response (simplified)
+function getBotResponse(userMessage) {
+    const responses = {
+        'pricing': 'Our pricing is based on usage tiers. The more you send, the less you pay per message. Would you like me to help you calculate costs for your expected volume?',
+        'plans': 'We offer Free Trial, Starter, Business, Professional, and Enterprise plans. Each plan includes different credit amounts and features. Which plan interests you most?',
+        'support': 'Our support team is available 24/7 via email and chat. Enterprise customers also get dedicated phone support. How can we help you today?',
+        'integration': 'We provide REST APIs, SDKs for popular languages, and webhook support. Our documentation includes code examples and tutorials. What platform are you integrating with?',
+        'default': 'Thanks for your question! Our sales team can provide detailed answers. Would you like me to connect you with them, or do you have any specific questions about our pricing plans?'
+    };
+    
+    const lowerMessage = userMessage.toLowerCase();
+    
+    for (const [key, response] of Object.entries(responses)) {
+        if (key !== 'default' && lowerMessage.includes(key)) {
+            return response;
+        }
+    }
+    
+    return responses.default;
+}
+
+// Initialize all additional features
+function initializeAdvancedFeatures() {
+    initializeAnalytics();
+    initializeErrorHandling();
+    initializePerformanceMonitoring();
+    initializeABTesting();
+    applyFeatureFlags();
+    initializeFAQSearch();
+    initializeCurrencyConverter();
+    initializeKeyboardNavigation();
+    initializeLazyLoading();
+    initializePriceComparison();
+}
+
+// Call advanced features after DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Small delay to ensure all elements are rendered
+    setTimeout(initializeAdvancedFeatures, 100);
+});
+
+// Export functions for external use
+window.PricingPage = {
+    trackEvent,
+    showModal,
+    closeModal,
+    showSuccessMessage,
+    showErrorMessage,
+    calculatePricing,
+    isFeatureEnabled,
+    toggleChat,
+    sendChatMessage
+};
+
+// Service Worker registration for offline support
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+                console.log('ServiceWorker registration successful');
+                trackEvent('service_worker_registered', {
+                    scope: registration.scope
+                });
+            })
+            .catch(function(error) {
+                console.log('ServiceWorker registration failed');
+                trackEvent('service_worker_failed', {
+                    error: error.message
+                });
+            });
+    });
+}
+</script>
+</body>
+</html>
